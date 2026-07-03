@@ -1,0 +1,101 @@
+---
+title: "To start, pick a place"
+format: html
+server: shiny
+
+---
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+
+# Setup -----------------------------------------------------------------
+
+# Turn off scientific notation
+options(scipen = 999) 
+
+# Load libraries
+libraries <- c("dplyr", "tidyr", "lubridate", "stringr", "ggplot2",
+               "shiny", "reticulate", "DT", "openxlsx")
+
+sapply(libraries, library, character.only = TRUE)
+
+# Format dates
+date <- Sys.Date()
+
+# Functions
+program_list <- list.files("R", full.names = TRUE)
+sapply(program_list, source)
+
+```
+
+To make this walkthrough feel more concrete, it's good to use 🌧️ precipitation data 🌧️ from a place you connect with. To get this data, either:
+
+A. Download a spreadsheet from NOAA at: 
+
+or
+
+B. Download it directly on this page using NOAA's API, which we'll be using: 
+
+- Request an API key from the [NOAA Climate Data Online page](https://www.ncdc.noaa.gov/cdo-web/token). 
+    - They'll send you an email with a long string of letters and numbers. This is your NOAA API key, like your password. 
+    - Enter this string in "Your API key."
+    - Enter a zip code you know and love. This page will hunt around the zip code for the NOAA weather station with the most complete data, then pull that data.
+- You can also pull data using the current default zip code, 98116, [Alki Beach in Seattle](https://maps.app.goo.gl/kkS2QiYdxoRbz1uTA), which overlooks the Seattle waterfront. 🌧️ ~ Precipitation data from the Emerald City ~ 🌧️ 
+
+![](www/s_donald-seattle-5364650_1920.jpg){width=50% fig-align="center"}
+
+```{r get_api_key, echo = FALSE}
+shiny::textInput(inputId = "load_api",
+                label = "Your API key:")
+br()
+
+shiny::textInput(inputId = "zipcode",
+                label = "Zip code:", 
+                value = "98116")
+br()
+
+shiny::actionButton(inputId = "pull_data",
+                    label = "Pull data",
+                    icon = shiny::icon("file-excel"))
+br()
+
+```
+
+```{r data_pull_server, echo = FALSE}
+#| context: server
+
+api_data <- eventReactive(input$pull_data, {
+  pull_daily_rain(
+    api_key = as.character(input$load_api),
+    zipcode = as.character(input$zipcode),
+    date_start = "2026-01-01",   # or another input, later
+    date_end = as.character(Sys.Date())
+  )
+})
+
+output$api_plot <- renderPlot({
+    req(api_data())
+    plot_rainfall(api_data())
+})
+
+output$result <- DT::renderDataTable({
+  req(api_data())
+  DT::datatable(
+    api_data(),
+    extensions = "Buttons",
+    options = list(
+      pageLength = 15,
+      order = list(0, "desc"),
+      dom = "Bfrtip", # 'B' = buttons, plus the usual filter/table/pagination row
+      buttons = c("csv", "excel")
+    ),
+    rownames = FALSE
+  )
+})
+
+```
+
+```{r return_ui, echo = FALSE}
+shiny::plotOutput("api_plot")
+DT::DTOutput("result")
+
+```
