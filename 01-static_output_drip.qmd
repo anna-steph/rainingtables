@@ -1,0 +1,148 @@
+---
+title: "Table 1: Static Output Drip {{< fa droplet >}}"
+format: html
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+
+# Setup -----------------------------------------------------------------
+
+# Turn off scientific notation
+options(scipen = 999)
+
+# Load libraries
+libraries <- c("dplyr", "readr", "ggplot2", "gt", "openxlsx", "janitor")
+invisible(sapply(libraries, library, character.only = TRUE))
+
+# Functions
+program_list <- list.files("R", full.names = TRUE)
+invisible(sapply(program_list, source))
+
+# Make sure our folders exist
+dir.create("data-raw", showWarnings = FALSE)
+dir.create("outputs", showWarnings = FALSE)
+```
+
+Hey, analyst! Welcome to 🌧️ **Raining Tables** 🌧️, a precipitation-themed package that puddle-jumps through 
+a minimal data pipeline. 
+
+In this package, we'll:  
+
+- read in a spreadsheet (either this package's demo file or the file you downloaded in Step 00), 
+- explore various ways to output it (Excel, PDF), 
+- pull data updates from the public NOAA API, 
+- read out to a couple database types, 
+- test our code and ensure it runs identically on other people's computers, 
+- save our outputs to Google Drive, 
+- create a simple dashboard, 
+- put our code in a container, and 
+- run it from ☁️ _the cloud._ ☁️
+
+Today, we're taking the first small step: read in `precipitation.csv` from `data-raw/`, 
+plot it in a nice chart, and export it as a table. 
+
+One folder structure note:
+
+Our spreadsheet lives in `data-raw/`, not mixed in with our code (`R/`) or our file outputs (`outputs/`). That's deliberate: raw data is a read-only input, never
+something a script overwrites. Folder structure helps us keep our workspace clean and tidy.
+
+Organizing our files this way makes updating a breeze ~ 🪁
+
+## Read the raw data
+
+```{r read_data}
+rainfall_raw <- readr::read_csv("data-raw/precipitation.csv")
+
+names(rainfall_raw)
+```
+
+## Clean it up
+
+NOAA's spreadsheet gives us uppercase field names. Our
+`plot_rainfall()` function expects lowercase columns --
+specifically `date`, `prcp`, and `station`. Our first task is to 
+tidy the dataset up a bit by converting all field names to standard
+lowercase.
+
+`janitor::clean_names()` does the lowercase conversion for us:
+
+```{r clean_data}
+rainfall <- rainfall_raw |>
+  janitor::clean_names()
+
+names(rainfall)
+```
+
+Field names before: `r names(rainfall_raw)[c(1, 6, 11)]`.  
+Field names after: `r names(rainfall)[c(1, 6, 11)]`. 
+
+In this case `clean_names()` alone was enough to match `plot_rainfall()`'s expected
+`station`, `date`, `prcp` columns.
+
+## Plotting raindrops 🫧
+
+First, we plot precipitation (see `R/plot_rainfall.R` for plot code):
+
+```{r plot_rainfall}
+rainfall_plot <- plot_rainfall(rainfall)
+rainfall_plot
+```
+
+Then we save out the plot as a .png in `outputs/rainfall_chart.png`:
+
+```{r save_plot}
+ggplot2::ggsave(
+  filename = "outputs/rainfall_chart.png",
+  plot = rainfall_plot,
+  width = 8,
+  height = 5
+)
+```
+
+## Exporting static files
+
+Once we update, we often have to get our data out to a wider audience, who
+may only be interested in static files, like .csvs, PDFs, or Excel. We'll also save
+these out to `outputs/` (see `R/export_outputs.R` for code). 
+
+### Here's how we do that:
+
+**A csv** is our universal, pipeline-friendly format, easy for another
+script, language, or database loader to pick up:
+
+```{r export_csv}
+export_csv(rainfall, "outputs/rainfall.csv")
+```
+
+**Excel** is for handoffs to stakeholders who prefer handling Excel files.
+For this, we use the openxlsx package to read out to Excel, rather than a non-proprietary csv file format.
+
+While they're common outputs, Excel files are uncommon in data pipelines. Multiple sheets, too much styling,
+embedded formulas all make this format less usable than a simple csv.
+
+```{r export_xlsx}
+export_xlsx(rainfall, "outputs/rainfall.xlsx")
+```
+
+**A gt table as a PDF** gives you a static PDF report, good for presentations and attachments.
+
+PDFs are also common outputs, but you wouldn't use them in a data pipeline unless your files
+were handed to you this way and you had no other choice. They were never designed to be
+machine-readable; it's easy to misread or misinterpret PDF information. 
+
+```{r export_pdf}
+export_gt_pdf(
+  head(rainfall, 15),
+  "outputs/rainfall_table.pdf",
+  title = "Daily Precipitation"
+)
+```
+
+## What we've just output
+
+Starting from a csv sitting in `data-raw/`, we cleaned its column names,
+plotted daily precipitation, and exported the results into `outputs/`. 
+
+Next up: rather than reading in static files, we'll pull our rain data directly from NOAA's API. ⚡ 
+

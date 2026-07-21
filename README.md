@@ -2,7 +2,7 @@
 
 🌧️ Raining Tables 🌧️ is a learning package. 
 
-Many analysts can write scripts using Python or R but might be unsure how to move their analytical scripts into "production," usually some kind of automated, recurring data pipeline. This package aims to give early programmers exposure to analytical pipelines by building one in incremental steps. 
+Many analysts can write scripts using Python or R but might be unsure how to move their analytical scripts into "production," usually some kind of automated, recurring data workflow. This package aims to give early programmers exposure to analytical pipelines by building one in incremental steps. 
 
 Using [daily precipitation data from NOAA](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND), 🌧️ Raining Tables 🌧️ helps analysts:  
 

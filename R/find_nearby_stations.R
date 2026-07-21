@@ -17,7 +17,7 @@
 #' @return A data frame with columns `zipcode` (character), `lat` (numeric),
 #'   and `lon` (numeric).
 #'
-#' @importFrom readr read_tsv cols col_character
+#' @importFrom readr read_delim cols col_character
 #' @importFrom dplyr select
 #'
 #' @export

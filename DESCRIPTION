@@ -1,0 +1,25 @@
+Package: rainingtables
+Title: Raining Tables: A Minimal Analytical Pipeline, Built in Stages
+Version: 0.0.0.9000
+Authors@R:
+    person("Anna", "Steph", role = c("aut", "cre"))
+Description: A learning package that walks analysts through building a
+    minimal analytical data pipeline in incremental stages, using daily
+    precipitation data from NOAA.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+Imports:
+    dplyr,
+    ggplot2,
+    gt,
+    httr,
+    janitor,
+    openxlsx,
+    readr
+Suggests:
+    chromote,
+    testthat (>= 3.0.0),
+    webshot2
+Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0
