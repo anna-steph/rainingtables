@@ -1,0 +1,8 @@
+# NOAA Rain Data {{< fa droplet >}} {#sec-noaa-data} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

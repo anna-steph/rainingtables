@@ -1,20 +1,18 @@
-# What's 🌧️ Raining Tables 🌧️ ?
+# Welcome to 🌧️ Raining Tables 🌧️ {.unnumbered}
 
-🌧️ Raining Tables 🌧️ is a learning package. 
+Hey, analyst! Welcome to 🌧️ **Raining Tables** 🌧️, a precipitation- and plumbing-themed package that puddle-jumps through a minimal data pipeline. 
 
-Many analysts can write scripts using Python or R but might be unsure how to move their analytical scripts into "production," usually some kind of automated, recurring data workflow. This package aims to give early programmers exposure to analytical pipelines by building one in incremental steps. 
+In this package, we're hooking up a [daily precipitation](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND) table so live data can flow through NOAA's public API to our environment and out to databases and dashboards. We'll: 
 
-Using [daily precipitation data from NOAA](https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND), 🌧️ Raining Tables 🌧️ helps analysts:  
-
-- read in an Excel table,
-- pull data updates from APIs,
-- explore report templates (parameterized reports),
-- read out to databases,
-- create a simple dashboard,
-- ensure reproducibility,
-- save to Google Drive,
-- put our programs in a container, and 
-- run our container on a cloud platform. 
+- read in a spreadsheet, 
+- explore various ways to output it (csv, Excel, PDF), 
+- pull data updates from NOAA's API (thanks, NOAA!), 
+- read out to a database, 
+- weatherproof with basic testing and maintenance, 
+- save our outputs to Google Drive, 
+- create a simple dashboard, 
+- put all our code in a container, and 
+- run it from ☁️ _the cloud._ ☁️
 
 By walking through these steps, this package aims to help you understand your script as part of an automated analytical pipeline, one that might flow from: 
 
@@ -22,7 +20,6 @@ By walking through these steps, this package aims to help you understand your sc
                                         > APIs > Dashboards
                                         > Excel/PDFs/other outputs > Google Drive
                                         > Containers > Cloud
-
 
 # Credits & Disclaimers
 

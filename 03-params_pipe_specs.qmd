@@ -1,0 +1,8 @@
+# Params: Pipe Specs {{< fa droplet >}} {#sec-params} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

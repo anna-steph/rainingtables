@@ -1,0 +1,8 @@
+# Where Next? {{< fa droplet >}} {#sec-next} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

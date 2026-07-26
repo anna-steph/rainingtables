@@ -1,0 +1,8 @@
+# Public APIs: Your Water Main {{< fa droplet >}} {#sec-noaa-api} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

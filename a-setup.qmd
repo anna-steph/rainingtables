@@ -1,0 +1,8 @@
+# Setup {{< fa droplet >}} {#sec-setup} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

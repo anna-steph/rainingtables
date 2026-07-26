@@ -1,0 +1,8 @@
+# Containers {{< fa droplet >}} {#sec-containers} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

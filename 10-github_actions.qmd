@@ -1,0 +1,8 @@
+# GitHub Actions {{< fa droplet >}} {#sec-github_actions} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

@@ -1,0 +1,8 @@
+# End-to-end Pipelines {{< fa droplet >}} {#sec-end-to-end} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```

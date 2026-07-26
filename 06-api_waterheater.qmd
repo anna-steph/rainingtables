@@ -1,0 +1,8 @@
+# App APIs: Waterheaters {{< fa droplet >}} {#sec-app_apis} 
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/common.R")
+```
