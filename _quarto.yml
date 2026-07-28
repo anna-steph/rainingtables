@@ -1,9 +1,23 @@
 project:
   type: book
   output-dir: _book
+
+  # Pin working directory to the project root. Quarto's default is "file",
+  # which is identical today (every chapter is at the root) but breaks
+  # silently the first time a .qmd gets nested in a subdirectory.
+  execute-dir: project
+
   preview:
     port: 4200
     browser: true
+
+  # NOTE: no `render:` key here on purpose.
+  # For a book project, Quarto derives the render list from book.chapters +
+  # book.appendices. Supplying an explicit `render` list overrides that, and
+  # "*.qmd" would sweep in every loose file at the repo root -- including the
+  # commented-out chapters below, the moment those files exist. The chapter
+  # list IS the guard: reports/ and app/ are excluded because they simply
+  # aren't listed.
 
 book:
   title: "Raining Tables"
@@ -19,6 +33,7 @@ book:
   site-url: https://anna-steph.github.io/rainingtables/
   repo-url: https://github.com/anna-steph/rainingtables
   repo-branch: main
+
   search: true
 
   sidebar:
@@ -38,56 +53,68 @@ book:
 
     - part: "Flow"
       chapters:
-        - 01-static_output_drip.qmd   # (a) read in a csv, export charts and tables
-        - 02-apis_water_main.qmd      # (b) live data from the NOAA API
-        - 03-params_pipe_specs.qmd    # (d) params for report templates
-        - 04-database_plumbing.qmd    # (c) reading out to dbs
-        - 05-cloud_storage.qmd        # (e) write outputs to Google Drive
+        - 01_static-output-drip.qmd   # (a) read in a csv, export charts and tables
+        - 02_apis-water-main.qmd      # (b) live data from the NOAA API
+        - 03_params-pipe-specs.qmd    # (c) params for report templates
+        - 04_database-plumbing.qmd    # (d) writing to dbs
+        - 05_cloud-storage.qmd        # (e) write outputs to Google Drive
 
     - part: "Taps"
       chapters:
-        
-        - 06-api_waterheater.qmd      # (f) read out to an API
-        - 07-rain_apps.qmd            # (g) minimal web apps
+        - 06_api-waterheater.qmd      # (f) writing to an API
+        - 07_rain-apps.qmd            # (g) minimal web apps
 
     - part: "Weatherproofing"
       chapters:
-        - 08-maintenance.qmd          # (h) renv / uv and unit tests
-        - 09-containers.qmd           # (i) Docker
-        - 10-github_actions.qmd       # (j) scheduled data pulls
-        #- 11-on_cloud.qmd             # (k) clouds
+        - 08_maintenance.qmd          # (h) renv / uv and unit tests
+        - 09_containers.qmd           # (i) Docker
+        - 10_github-actions.qmd       # (j) scheduled data pulls
+        - 11_on-cloud.qmd            # (k) clouds
 
     - part: "Blueprints"
       chapters:
-        - 12-end_to_end.qmd
-        - 13-where_next.qmd
+        - 12_end-to-end.qmd
+        - 13_where-next.qmd
 
   appendices:
-    - a-setup.qmd
-    - b-noaa_data.qmd
-    #- c-troubleshooting.qmd
-    #- d-glossary.qmd
+    - a_setup.qmd
+    - b_noaa-data.qmd
+    #- c_troubleshooting.qmd
+    #- d_glossary.qmd
 
 format:
   html:
     theme:
       - lumen
+      # Add a custom.scss here later if you want to tune type/spacing;
+      # the list form is already set up for it.
+
     toc: true
     toc-depth: 3
     toc-title: "On this page"
-    number-sections: false
-    number-depth: 2
+
+    # Numbering is ON so that @sec- cross-references resolve to a chapter
+    # number. In a step-by-step guide you will constantly write "as we set up
+    # in Chapter 2" -- without numbering those links have to be hand-written
+    # and they rot when you reorder. depth 1 numbers chapters only, not every
+    # H2/H3, so pages stay visually calm.
+    number-sections: true
+    number-depth: 1
+
     fig-align: center
     fig-responsive: true
     tbl-cap-location: bottom
+
     code-copy: true
     code-overflow: wrap
     code-line-numbers: false
     highlight-style: github
+
     link-external-newwindow: true
     link-external-icon: false
     smooth-scroll: true
     anchor-sections: true
+
     # code-link turns function names in code blocks into links to their docs.
     # Requires the downlit and xml2 R packages at render time. Drop it if you
     # want the CI render to work without any R installation at all.
@@ -98,11 +125,23 @@ format:
 # Add it later, deliberately, if someone actually asks for a PDF.
 
 execute:
-  freeze: auto      # commit the _freeze/ directory — this is what keeps CI from
-                    # trying to call NOAA, Google Drive, Docker, or AWS
+  # Commit the _freeze/ directory. This is the whole mechanism: you render
+  # locally where you have credentials, results get cached, and CI rebuilds
+  # the site from cache without ever calling NOAA, Google Drive, Docker, or AWS.
+  freeze: auto
+
   echo: true
   warning: false
-  message: false
+
+  # Messages left visible on purpose. In this book the message often IS the
+  # lesson -- renv::restore() output, a DB connection notice, a dplyr join
+  # reporting which keys matched. Silence them per-chunk (#| message: false)
+  # where they're just noise.
+  message: true
+
+  # Errors halt the render by default, which is what you want. Use
+  # #| error: true on individual chunks for the deliberate "here's what
+  # happens when the API key isn't set" demonstrations.
   error: false
 
 knitr:

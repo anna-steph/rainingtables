@@ -4,5 +4,5 @@
 #| label: setup
 #| include: false
 
-source("R/common.R")
+source("R/_common.R")
 ```

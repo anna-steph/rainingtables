@@ -1,0 +1,8 @@
+# On Cloud {{< fa droplet >}} {#sec-on-cloud}
+
+```{r}
+#| label: setup
+#| include: false
+
+source("R/_common.R")
+```

@@ -1,4 +1,4 @@
-# Welcome to 🌧️ Raining Tables 🌧️ {.unnumbered}
+# 🌧️ Raining Tables 🌧️ {.unnumbered}
 
 Hey, analyst! Welcome to 🌧️ **Raining Tables** 🌧️, a precipitation- and plumbing-themed package that puddle-jumps through a minimal data pipeline. 
 

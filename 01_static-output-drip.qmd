@@ -4,7 +4,7 @@
 #| label: setup
 #| include: false
 
-source("R/common.R")
+source("R/_common.R")
 ```
 
 Today, we're taking the first small step: read in `precipitation.csv` from `data-raw/`, 
@@ -19,11 +19,11 @@ Our `precipitation.csv` spreadsheet lives in `data-raw/`, not mixed in with our 
 
 ```
 rainingtables/
-├── data-raw/          # read-only inputs, never overwritten
+├── data-raw/                  # folder: read-only inputs, never overwritten
 │   └── precipitation.csv
-├── R/                 # functions
-├── outputs/           # read out folder
-└── 01-static_output_drip.qmd
+├── R/                         # folder; functions
+├── outputs/                   # folder: outputs written here
+└── 01_static-output-drip.qmd
 ```
 
 Keeping these files separate makes updating a breeze ~ 🪁
@@ -33,22 +33,40 @@ When the data refreshes in @sec-noaa-api, we know where to expect file changes.
 
 ## Read in the raw data
 
-Let's pull in our static csv, `data-raw/precipitation.csv`. We'll also clean up the field names with the handy janitor package. 
+Let's read in our static csv, `data-raw/precipitation.csv`. 
 
 ```{r}
 #| label: read-data
 
 # reading in our NOAA spreadsheet
 rainfall_raw <- readr::read_csv("data-raw/precipitation.csv")
+```
 
-# let's see how our data are structured
+How are our data structured?
+
+```{r}
+#| label: explore
+
+# looking at data structure
 str(rainfall_raw)
+```
 
-# let's clean up the field names
+Let's clean up the field names using the handy `janitor` package...
+
+```{r}
+#| label: cleanup
+
+# cleaning field names
 rainfall <- rainfall_raw |>
   janitor::clean_names()
+```
 
-# and let's take a peek inside at the first five rows
+and let's take a peek at the first five rows.
+
+```{r}
+#| label: peek
+
+# view first five rows
 gt::gt(head(rainfall, 5))
 ```
 
@@ -63,7 +81,8 @@ The Quarto format's quite flexible. We can:
 - **Output to multiple file types.** The standard format is html, but you can also output to Word, PDF, slides, and other file formats. 
 - **Run code in multiple languages.** We're currently running R code, but Quarto can also run Python, Julia, and Observable. 
 
-A Small Quarto report workflow:
+Quarto report workflows:
+
 ![Artwork from "Hello, Quarto" keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.](www/ahorst_quarto_illustration.png){width=75% fig-align="center"}
 
 ### Plotting raindrops 🫧
@@ -163,7 +182,7 @@ Next up: rather than read in static files, we'll pull our rain data directly fro
 
 ## Additional references
 
-Recommended reading & viewing for scripts, tables, and charts:
+Further reading & viewing on scripts, tables, and charts:
 
 | Author | Resource | Description |
 | ------ | -------- | ----------- |
