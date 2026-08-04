@@ -1,0 +1,56 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Raining Tables",
+    "section": "",
+    "text": "🌧️ Raining Tables 🌧️\nHey, analyst! Welcome to 🌧️ Raining Tables 🌧️, a precipitation- and plumbing-themed package that puddle-jumps through a minimal data pipeline.\nIn this package, we’re hooking up a daily precipitation table so live data can flow through NOAA’s public API to our environment and out to databases and dashboards. We’ll:\n\nread in a spreadsheet,\nexplore various ways to output it (csv, Excel, PDF),\npull data updates from NOAA’s API (thanks, NOAA!),\nread out to a database,\nweatherproof with basic testing and maintenance,\nsave our outputs to Google Drive,\ncreate a simple dashboard,\nput all our code in a container, and\nrun it from ☁️ the cloud. ☁️\n\nBy walking through these steps, this package aims to help you understand your script as part of an automated analytical pipeline, one that might flow from:\nPublic data APIs &gt; Report templates &gt; Databases\n                                    &gt; APIs &gt; Dashboards\n                                    &gt; Excel/PDFs/other outputs &gt; Google Drive\n                                    &gt; Containers &gt; Cloud\n\n\nCredits & Disclaimers\n🌧️ Raining Tables 🌧️ is not intended to teach you to code. A variety of teaching tools are available for learning to code. Code syntax is unlikely to be your bottleneck these days, particularly with the advent of Claude Code and other AI tools.\nViews my own and do not reflect the views of any current or prior employer. I receive no compensation for this blog or any recommended resources on it.\n🌧️ Raining Tables 🌧️ Data Credits:\nDaily summaries from NOAA’s National Centers for Environmental Information’s Global Historical Climatology Network. You all are awesome ❤️\nWeather data is critical infrastructure.\nFormal data citation:\nMenne, M.J., I. Durre, B. Korzeniewski, S. McNeill, K. Thomas, X. Yin, S. Anthony, R. Ray, R.S. Vose, B.E.Gleason, and T.G. Houston, 2012: Global Historical Climatology Network - Daily (GHCN-Daily), Version 3.34. NOAA National Climatic Data Center. http://doi.org/10.7289/V5D21VHZ. July 2026.\n🌧️ Raining Tables 🌧️ Image Credits:\nSeattle Space Needle: S_Donald at pixabay.",
+    "crumbs": [
+      "🌧️ Raining Tables 🌧️"
+    ]
+  },
+  {
+    "objectID": "01_static-output-drip.html",
+    "href": "01_static-output-drip.html",
+    "title": "1  Static output drip ",
+    "section": "",
+    "text": "Read in the raw data\nToday, we’re taking the first small step: read in precipitation.csv from data-raw/, plot it in a nice chart, and export it as a table.\nThis may already be a very familiar process for you, and if so, excellent! Everything else in this process substitutes pieces of this chapter: instead of reading in a csv, we’ll get data directly from the source; instead of reading out static files, we’ll see how to save to databases and create a small-but-functional dashboard.\nLet’s read in our static csv, data-raw/precipitation.csv.\n# reading in our NOAA spreadsheet\nrainfall_raw &lt;- readr::read_csv(\"data-raw/precipitation.csv\")\nHow are our data structured?\n# looking at data structure\nstr(rainfall_raw)\n#&gt; spc_tbl_ [178 × 14] (S3: spec_tbl_df/tbl_df/tbl/data.frame)\n#&gt;  $ STATION        : chr [1:178] \"US1WAKG0072\" \"US1WAKG0072\" \"US1WAKG0072\" \"US1WAKG0072\" ...\n#&gt;  $ NAME           : chr [1:178] \"SEATTLE 4.2 SW, WA US\" \"SEATTLE 4.2 SW, WA US\" \"SEATTLE 4.2 SW, WA US\" \"SEATTLE 4.2 SW, WA US\" ...\n#&gt;  $ LATITUDE       : num [1:178] 47.6 47.6 47.6 47.6 47.6 ...\n#&gt;  $ LONGITUDE      : num [1:178] -122 -122 -122 -122 -122 ...\n#&gt;  $ ELEVATION      : num [1:178] 6.7 6.7 6.7 6.7 6.7 6.7 6.7 6.7 6.7 6.7 ...\n#&gt;  $ DATE           : Date[1:178], format: \"2026-01-01\" \"2026-01-02\" ...\n#&gt;  $ DAPR           : num [1:178] NA NA NA NA NA NA NA NA NA NA ...\n#&gt;  $ DAPR_ATTRIBUTES: chr [1:178] NA NA NA NA ...\n#&gt;  $ MDPR           : num [1:178] NA NA NA NA NA NA NA NA NA NA ...\n#&gt;  $ MDPR_ATTRIBUTES: chr [1:178] NA NA NA NA ...\n#&gt;  $ PRCP           : num [1:178] 0 0.19 0.29 0.5 0.15 0.13 0.33 0.13 0 0 ...\n#&gt;  $ PRCP_ATTRIBUTES: chr [1:178] \",,N\" \",,N\" \",,N\" \",,N\" ...\n#&gt;  $ SNOW           : num [1:178] 0 NA NA NA NA NA NA NA 0 0 ...\n#&gt;  $ SNOW_ATTRIBUTES: chr [1:178] \",,N\" NA NA NA ...\n#&gt;  - attr(*, \"spec\")=\n#&gt;   .. cols(\n#&gt;   ..   STATION = col_character(),\n#&gt;   ..   NAME = col_character(),\n#&gt;   ..   LATITUDE = col_double(),\n#&gt;   ..   LONGITUDE = col_double(),\n#&gt;   ..   ELEVATION = col_double(),\n#&gt;   ..   DATE = col_date(format = \"\"),\n#&gt;   ..   DAPR = col_double(),\n#&gt;   ..   DAPR_ATTRIBUTES = col_character(),\n#&gt;   ..   MDPR = col_double(),\n#&gt;   ..   MDPR_ATTRIBUTES = col_character(),\n#&gt;   ..   PRCP = col_double(),\n#&gt;   ..   PRCP_ATTRIBUTES = col_character(),\n#&gt;   ..   SNOW = col_double(),\n#&gt;   ..   SNOW_ATTRIBUTES = col_character()\n#&gt;   .. )\n#&gt;  - attr(*, \"problems\")=&lt;pointer: 0x11f71ac50&gt;\nLet’s clean up the field names using the handy janitor package…\n# cleaning field names\nrainfall &lt;- rainfall_raw |&gt;\n  janitor::clean_names()\nand let’s take a peek at the first five rows.\n# view first five rows\ngt::gt(head(rainfall, 5))\n\n\n\n\n\nstation\nname\nlatitude\nlongitude\nelevation\ndate\ndapr\ndapr_attributes\nmdpr\nmdpr_attributes\nprcp\nprcp_attributes\nsnow\nsnow_attributes\n\n\n\nUS1WAKG0072\nSEATTLE 4.2 SW, WA US\n47.57738\n-122.412\n6.7\n2026-01-01\nNA\nNA\nNA\nNA\n0.00\n,,N\n0\n,,N\n\n\nUS1WAKG0072\nSEATTLE 4.2 SW, WA US\n47.57738\n-122.412\n6.7\n2026-01-02\nNA\nNA\nNA\nNA\n0.19\n,,N\nNA\nNA\n\n\nUS1WAKG0072\nSEATTLE 4.2 SW, WA US\n47.57738\n-122.412\n6.7\n2026-01-03\nNA\nNA\nNA\nNA\n0.29\n,,N\nNA\nNA\n\n\nUS1WAKG0072\nSEATTLE 4.2 SW, WA US\n47.57738\n-122.412\n6.7\n2026-01-04\nNA\nNA\nNA\nNA\n0.50\n,,N\nNA\nNA\n\n\nUS1WAKG0072\nSEATTLE 4.2 SW, WA US\n47.57738\n-122.412\n6.7\n2026-01-05\nNA\nNA\nNA\nNA\n0.15\n,,N\nNA\nNA\nBefore we get started, it’s good to familiarize yourself with the data we’re looking at. Read about precipitation data, data field descriptions, and other details at Appendix B.",
+    "crumbs": [
+      "Flow",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Static output drip {{< fa droplet >}}</span>"
+    ]
+  },
+  {
+    "objectID": "01_static-output-drip.html#now-to-our-static-outputs",
+    "href": "01_static-output-drip.html#now-to-our-static-outputs",
+    "title": "1  Static output drip ",
+    "section": "Now, to our static outputs! ⚡",
+    "text": "Now, to our static outputs! ⚡\nToday, we’re outputting a simple chart and table, outputs you’d likely circulate once you received data updates. Fortunately, the Quarto format can handle both!\nThe Quarto format’s quite flexible. We can:\n\n\nOutput to multiple file types. The standard format is html, but you can also output to Word, PDF, slides, and other file formats.\n\nRun code in multiple languages. We’re currently running R code, but Quarto can also run Python, Julia, and Observable.\n\nQuarto report workflows:\n\n\nArtwork from “Hello, Quarto” keynote by Julia Lowndes and Mine Çetinkaya-Rundel, presented at RStudio Conference 2022. Illustrated by Allison Horst.\n\nPlotting raindrops 🫧\nFirst, we’ll plot precipitation. The plots help us get a sense of the data we’re working with, and we can start tinkering with plot formatting.\nThe plot code lives in R/plot_rainfall.R rather than here in the chapter. Take a look! Having a separate, standalone function lets us regenerate and output it with the scheduled job in Chapter 10.\n\nrainfall_plot &lt;- plot_rainfall(rainfall)\nrainfall_plot\n\n\n\n\n\n\nFigure 1.1: Daily precipitation\n\n\n\n\nThen we save out the plot as a .png in outputs/rainfall_chart.png:\n\nggplot2::ggsave(\n  filename = \"outputs/rainfall_chart.png\",\n  plot = rainfall_plot,\n  width = 8,\n  height = 5\n)\n\nExporting static files\nOnce we update, we often have to get our data out to a wider audience, who may only be interested in static files, like .csvs, PDFs, or Excel. We’ll also save these out to outputs/ (see R/export_outputs.R for code).\nHere’s how we do that:\nA csv is our universal, pipeline-friendly format, easy for another script, language, or database loader to pick up:\n\nwrite_csv(\n  rainfall,\n  \"outputs/raintable_01.csv\"\n)\n\nExcel is for handoffs to stakeholders who prefer handling Excel files. Since Excel has a more complex format, we’re using the openxlsx package to read out to Excel, rather than a non-proprietary csv file format.\nWhile they’re common outputs, Excel files are uncommon in data pipelines. Multiple sheets, too much styling, embedded formulas all make this format less usable than a simple csv.\n\nopenxlsx::write.xlsx(\n  rainfall,\n  \"outputs/raintable_01.xlsx\",\n  sheetName = \"raintable_01\"\n)\n\nA gt table as a PDF gives you a static PDF report, good for presentations and attachments.\nPDFs are also common outputs, but you wouldn’t use them in a data pipeline unless your files were handed to you this way and you had no other choice. They were never designed to be machine-readable; it’s easy to misread or misinterpret PDF information.\n\n\n\n\n\n\n\nImportantCheckpoint\n\n\n\nBefore moving on, check that outputs/ now contains four files: rainfall_chart.png, raintable_01.csv, raintable_01.xlsx, and raintable_01.pdf. If any are missing, sec-troubleshooting has the usual suspects.",
+    "crumbs": [
+      "Flow",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Static output drip {{< fa droplet >}}</span>"
+    ]
+  },
+  {
+    "objectID": "01_static-output-drip.html#quick-recap",
+    "href": "01_static-output-drip.html#quick-recap",
+    "title": "1  Static output drip ",
+    "section": "Quick recap",
+    "text": "Quick recap\nStarting from a csv sitting in data-raw/, we cleaned up its field names, plotted daily precipitation, and exported the results into outputs/.\nNotice this script’s limitations: since we’re working from a static csv, we’ll need to repull it, then rerun to update our charts and tables. Since our rain data updates daily, we’ll have to redownload and rerun every day unless we create a better pipeline.\nNext up: rather than read in static files, we’ll pull our rain data directly from NOAA’s API. ⚡",
+    "crumbs": [
+      "Flow",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Static output drip {{< fa droplet >}}</span>"
+    ]
+  },
+  {
+    "objectID": "01_static-output-drip.html#additional-references",
+    "href": "01_static-output-drip.html#additional-references",
+    "title": "1  Static output drip ",
+    "section": "Additional references",
+    "text": "Additional references\nFurther reading & viewing on scripts, tables, and charts:\n\n\nAuthor\nResource\nDescription\n\n\nx\ny\nz",
+    "crumbs": [
+      "Flow",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Static output drip {{< fa droplet >}}</span>"
+    ]
+  }
+]
