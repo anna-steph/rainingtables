@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>Appendix B — NOAA Rain Data  – Raining Tables</title>
+<title>Appendix B — NOAA Precipitation Data – Raining Tables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -16,6 +16,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -74,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./a_setup.html">Appendices</a></li><li class="breadcrumb-item"><a href="./b_noaa-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Rain Data {{&lt; fa droplet &gt;}}</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./a_setup.html">Appendices</a></li><li class="breadcrumb-item"><a href="./b_noaa-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Precipitation Data</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -106,23 +141,23 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Flow</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_static-output-drip.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Static output drip </span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Static output drip</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_apis-water-main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Your Water Main </span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -147,13 +182,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Taps</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./06_api-waterheater.html" class="sidebar-item-text sidebar-link">
@@ -170,13 +205,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">Weatherproofing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./08_maintenance.html" class="sidebar-item-text sidebar-link">
@@ -205,13 +240,13 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Blueprints</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">
 <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./12_end-to-end.html" class="sidebar-item-text sidebar-link">
@@ -244,7 +279,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./b_noaa-data.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Rain Data </span></span></a>
+ <span class="menu-text"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Precipitation Data</span></span></a>
   </div>
 </li>
       </ul>
@@ -253,12 +288,16 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#mind-your-metadata" id="toc-mind-your-metadata" class="nav-link active" data-scroll-target="#mind-your-metadata">Mind Your Metadata</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./a_setup.html">Appendices</a></li><li class="breadcrumb-item"><a href="./b_noaa-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Rain Data {{&lt; fa droplet &gt;}}</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-noaa-data" class="quarto-section-identifier">Appendix B — NOAA Rain Data <i class="fa-solid fa-droplet" aria-label="droplet"></i></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./a_setup.html">Appendices</a></li><li class="breadcrumb-item"><a href="./b_noaa-data.html"><span class="chapter-number">B</span>&nbsp; <span class="chapter-title">NOAA Precipitation Data</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-noaa-data" class="quarto-section-identifier">Appendix B — NOAA Precipitation Data</span></h1>
 </div>
 
 
@@ -272,10 +311,1198 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><p>In rainingtables, we’re pulling data from the <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily">NOAA Global Historical Climatology Network Daily (GHCNd)</a>. Let’s take a look and review NOAA’s notes on these data to understand what we’re working with.</p>
+<p>As <a href="https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily">NOAA explains</a>, the GHCNd is an integrated database of daily climate summaries from more than 100,000 weather stations across 180 countries and territories worldwide. In addition to data on total precipitation, summaries provide minimum and maximum temperature, snowfall, and snow depth.</p>
+<p>Weather stations vary in (a) how many fields and observations they provide and (b) how long they’ve been operational:</p>
+<ol type="a">
+<li>Not all weather stations report all data fields. About half of stations only report precipitation.<br>
+</li>
+<li>Stations don’t necessarily start reporting data on the same day. Some stations have reported data for less than a year, some more than 175 years. Some previously reported data but have since ceased operating.</li>
+</ol>
+<p>We can see this in action:</p>
+<section id="mind-your-metadata" class="level2"><h2 class="anchored" data-anchor-id="mind-your-metadata">Mind Your Metadata</h2>
+<p>With clean, accessible, and detailed data like NOAA’s, you may be tempted to jump into analysis and overlook key metadata and data exploration. <strong>Resist!</strong> Some metadata fields contain user notes from our nice NOAA nerds. They want you to know what you’re looking at.</p>
+<p>🌂</p>
+<p>As an example, let’s pick iconic places in <a href="https://qz.com/rainiest-wettest-driest-us-cities#the-wettest-cities-in-america--and-the-driest">a few rainy cities</a> to pull data from:</p>
+<table class="table">
+<thead><tr class="header">
+<th>Rainy City</th>
+<th>Iconic Place</th>
+<th>Zip Code</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>Syracuse, NY</td>
+<td>Erie Canal Museum</td>
+<td>13202</td>
+</tr>
+<tr class="even">
+<td>Portland, OR</td>
+<td>Rose Garden in Washington Park</td>
+<td>97205</td>
+</tr>
+<tr class="odd">
+<td>Grand Rapids, MI</td>
+<td>Grand Rapids Public Museum</td>
+<td>49504</td>
+</tr>
+</tbody>
+</table>
+<p>Let’s use their zipcodes to pull their precipitation data and walk through it.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># pull data for these zipcodes</span></span>
+<span><span class="va">zipcodes</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"13202"</span>, <span class="st">"97205"</span>, <span class="st">"49504"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># not all zipcodes have a weather station in them</span></span>
+<span><span class="co"># safe_pull allows the function to continue if it returns a null result on one zipcode</span></span>
+<span><span class="va">safe_pull</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/safely.html">safely</a></span><span class="op">(</span><span class="va">pull_daily_rain</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># pulling data from the past three months</span></span>
+<span><span class="va">rain_list</span> <span class="op">&lt;-</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="va">zipcodes</span>, <span class="kw">function</span><span class="op">(</span><span class="va">z</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu">safe_pull</span><span class="op">(</span></span>
+<span>    api_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"NOAA_CDO_KEY"</span><span class="op">)</span>,</span>
+<span>    zipcode <span class="op">=</span> <span class="va">z</span>,</span>
+<span>    date_start <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span> <span class="op">-</span> <span class="fu"><a href="https://rdrr.io/r/base/weekday.POSIXt.html">months</a></span><span class="op">(</span><span class="fl">3</span><span class="op">)</span>,</span>
+<span>    date_end <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://rlang.r-lib.org/reference/set_names.html">set_names</a></span><span class="op">(</span><span class="va">zipcodes</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">example_table</span> <span class="op">&lt;-</span> <span class="va">rain_list</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="st">"result"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/keep.html">compact</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">imap_dfr</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">df</span>, <span class="va">zip</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">mutate</span><span class="op">(</span>zipcode <span class="op">=</span> <span class="va">zip</span><span class="op">)</span></span>
+<span>    <span class="op">}</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">bind_rows</span><span class="op">(</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Here’s how our data are formatted when coming from NOAA’s API (first ten rows):</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># print rain table</span></span>
+<span><span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example_table</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="vffjdrtaoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vffjdrtaoz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vffjdrtaoz thead, #vffjdrtaoz tbody, #vffjdrtaoz tfoot, #vffjdrtaoz tr, #vffjdrtaoz td, #vffjdrtaoz th {
+  border-style: none;
+}
+
+#vffjdrtaoz p {
+  margin: 0;
+  padding: 0;
+}
+
+#vffjdrtaoz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vffjdrtaoz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vffjdrtaoz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vffjdrtaoz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vffjdrtaoz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vffjdrtaoz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vffjdrtaoz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vffjdrtaoz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vffjdrtaoz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vffjdrtaoz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vffjdrtaoz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vffjdrtaoz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vffjdrtaoz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vffjdrtaoz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vffjdrtaoz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vffjdrtaoz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vffjdrtaoz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vffjdrtaoz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vffjdrtaoz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vffjdrtaoz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vffjdrtaoz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vffjdrtaoz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vffjdrtaoz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vffjdrtaoz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vffjdrtaoz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vffjdrtaoz .gt_left {
+  text-align: left;
+}
+
+#vffjdrtaoz .gt_center {
+  text-align: center;
+}
+
+#vffjdrtaoz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vffjdrtaoz .gt_font_normal {
+  font-weight: normal;
+}
+
+#vffjdrtaoz .gt_font_bold {
+  font-weight: bold;
+}
+
+#vffjdrtaoz .gt_font_italic {
+  font-style: italic;
+}
+
+#vffjdrtaoz .gt_super {
+  font-size: 65%;
+}
+
+#vffjdrtaoz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vffjdrtaoz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vffjdrtaoz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vffjdrtaoz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vffjdrtaoz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vffjdrtaoz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vffjdrtaoz .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vffjdrtaoz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vffjdrtaoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings header">
+<th id="date" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">date</th>
+<th id="datatype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">datatype</th>
+<th id="station" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">station</th>
+<th id="attributes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">attributes</th>
+<th id="value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">value</th>
+<th id="zipcode" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">zipcode</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-01T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-02T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-03T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-04T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-05T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-06T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.11</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-07T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.01</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-08T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-09T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.45</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-10T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">1.74</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p>See Column 4, <code>attributes</code>? These are data notes from NOAA. They help us understand what we’re seeing if we can crack the code. How can we interpret <code>attributes</code>? Look at the <code>attributes</code> values in zipcode 49504 observations. How do we find out what “N” means?</p>
+<p>The answer: it takes a bit of fishing on NOAA’s website. 🎣</p>
+<p>🐟 Fish 1: metadata manuals.</p>
+<p>Most public data sources have at least one metadata manual available to help you interpret their data. NOAA’s no exception:</p>
+<ul>
+<li>When we look at NOAA’s Climate Data Online <a href="https://www.ncei.noaa.gov/cdo-web/datasets">Dataset Discovery page</a>, we see a link to NOAA’s <a href="https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">GHCN Documentation</a>.<br>
+</li>
+<li>Scroll down to page 3, and under <code>Table 2 (Quality Flag/Attribute)</code>, we see: “N = failed naught check”.</li>
+</ul>
+<p>Okay, what is a naught check? 🧐</p>
+<p>🐠 Fish 2: more metadata mining.</p>
+<ul>
+<li>With a bit more fishing, we find a second webpage, <a href="https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc%3AC00861/html#">Global Historical Climatology Network - Daily (GHCN - Daily), Version 3</a>. On this page, we spot a <a href="https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/doc/readme.txt">GHCNd README File</a>, open it, and scroll down. Again we see “N = failed naught check” under QFLAG1, “the quality flag for the first day of the month.”</li>
+</ul>
+<p>🐡 Fish 3: ask the experts! 🙋‍♀️</p>
+<p>☂️</p>
+<p>SELF NOTES: * RE: Grand Rapids, this is from two weather stations, and the metadata are telling you it failed checks (“N”). * Have to look up via the <a href="https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND">Climate Data Online Search</a> to make sure you’re using current stations with good coverage. Like here: https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US260009/detail#stationlist. Only three weather stateions are at 100% and are through current day.</p>
+<p>Let’s align this with what we see in NOAA’s <a href="https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">GHCN Documentation</a>, which you can find reviewing their Climate Data Online <a href="https://www.ncei.noaa.gov/cdo-web/datasets">Dataset Discovery page</a>.</p>
+<p>Their notes on daily summaries, with additional documentation <a href="https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">here</a>:</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Daily Summaries
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Global Historical Climate Network includes daily land surface observations from around the world. The GHCNd was developed to meet the needs of climate analysis and monitoring studies that require data at a sub-monthly time resolution (e.g., assessments of the frequency of heavy rainfall, heat wave duration, etc.). The dataset includes observations from World Meteorological Organization, Cooperative, and CoCoRaHS networks. If observed, the station dataset includes max and minimum temperatures, total precipitation, snowfall, and depth of snow on ground. Some U.S. station data are typically delayed only 24 hours.</p>
+</div>
+</div>
+<p>Since NOAA has a number of weather stations, with varying periods of observation, we can also search our city names using their <a href="https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND">Climate Data Online Search</a>.</p>
+<ul>
+<li>If we view the details of Grand Rapids, we learn NOAA has 87 weather stations in this area, but only a handful have 100% coverage through the current date.</li>
+<li>
+</li></ul>
+<p>Let’s match this to what we can see on NOAA’s <a href="https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND">Climate Data Online Search tool</a>.</p>
+<p>We already know a few things from making the API call:</p>
+<ul>
+<li>Since we’re using a zipcode lookup</li>
+</ul>
+<p>Interestingly, for the same time period, we have different observation counts! What’s causing this?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">example_table</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">zipcode</span>, <span class="va">date</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">summarise</span><span class="op">(</span>obs_count <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">obs_count</span> <span class="op">!=</span> <span class="fl">1</span><span class="op">)</span></span>
+<span><span class="co">#&gt; # A tibble: 70 × 3</span></span>
+<span><span class="co">#&gt; # Groups:   zipcode [1]</span></span>
+<span><span class="co">#&gt;    zipcode date                obs_count</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;                   &lt;int&gt;</span></span>
+<span><span class="co">#&gt;  1 49504   2026-06-01T00:00:00         2</span></span>
+<span><span class="co">#&gt;  2 49504   2026-06-02T00:00:00         2</span></span>
+<span><span class="co">#&gt;  3 49504   2026-06-04T00:00:00         2</span></span>
+<span><span class="co">#&gt;  4 49504   2026-06-05T00:00:00         2</span></span>
+<span><span class="co">#&gt;  5 49504   2026-06-06T00:00:00         2</span></span>
+<span><span class="co">#&gt;  6 49504   2026-06-09T00:00:00         2</span></span>
+<span><span class="co">#&gt;  7 49504   2026-06-10T00:00:00         2</span></span>
+<span><span class="co">#&gt;  8 49504   2026-06-11T00:00:00         2</span></span>
+<span><span class="co">#&gt;  9 49504   2026-06-12T00:00:00         2</span></span>
+<span><span class="co">#&gt; 10 49504   2026-06-13T00:00:00         2</span></span>
+<span><span class="co">#&gt; # ℹ 60 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
+<span><span class="co"># find max rain date</span></span>
+<span><span class="va">max_rain</span> <span class="op">&lt;-</span> <span class="va">rain_list</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html">map</a></span><span class="op">(</span><span class="st">"result"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/keep.html">compact</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>    <span class="fu">purrr</span><span class="fu">::</span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map_dfr.html">imap_dfr</a></span><span class="op">(</span><span class="kw">function</span><span class="op">(</span><span class="va">df</span>, <span class="va">zip</span><span class="op">)</span> <span class="op">{</span></span>
+<span>        <span class="va">df</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">value</span> <span class="op">==</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">value</span>, na.rm <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">mutate</span><span class="op">(</span>zipcode <span class="op">=</span> <span class="va">zip</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>            <span class="fu">mutate</span><span class="op">(</span>date_format <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="fu">stringr</span><span class="fu">::</span><span class="fu"><a href="https://stringr.tidyverse.org/reference/str_extract.html">str_extract</a></span><span class="op">(</span><span class="va">date</span>, <span class="st">".+(?=T)"</span><span class="op">)</span>, <span class="st">"%Y-%m-%d"</span><span class="op">)</span></span>
+<span>            <span class="op">)</span></span>
+<span><span class="op">}</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Here’s how our data are formatted afer</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># print rain table</span></span>
+<span><span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="va">max_rain</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="vgderywaoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#vgderywaoz table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#vgderywaoz thead, #vgderywaoz tbody, #vgderywaoz tfoot, #vgderywaoz tr, #vgderywaoz td, #vgderywaoz th {
+  border-style: none;
+}
+
+#vgderywaoz p {
+  margin: 0;
+  padding: 0;
+}
+
+#vgderywaoz .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#vgderywaoz .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#vgderywaoz .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#vgderywaoz .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#vgderywaoz .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#vgderywaoz .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#vgderywaoz .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#vgderywaoz .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#vgderywaoz .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#vgderywaoz .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#vgderywaoz .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#vgderywaoz .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#vgderywaoz .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#vgderywaoz .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#vgderywaoz .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgderywaoz .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#vgderywaoz .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#vgderywaoz .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#vgderywaoz .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgderywaoz .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#vgderywaoz .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgderywaoz .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#vgderywaoz .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgderywaoz .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#vgderywaoz .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#vgderywaoz .gt_left {
+  text-align: left;
+}
+
+#vgderywaoz .gt_center {
+  text-align: center;
+}
+
+#vgderywaoz .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#vgderywaoz .gt_font_normal {
+  font-weight: normal;
+}
+
+#vgderywaoz .gt_font_bold {
+  font-weight: bold;
+}
+
+#vgderywaoz .gt_font_italic {
+  font-style: italic;
+}
+
+#vgderywaoz .gt_super {
+  font-size: 65%;
+}
+
+#vgderywaoz .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#vgderywaoz .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#vgderywaoz .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#vgderywaoz .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#vgderywaoz .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#vgderywaoz .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#vgderywaoz .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#vgderywaoz .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#vgderywaoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+<table class="gt_table table table-sm table-striped small" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings header">
+<th id="date" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">date</th>
+<th id="datatype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">datatype</th>
+<th id="station" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">station</th>
+<th id="attributes" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">attributes</th>
+<th id="value" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">value</th>
+<th id="zipcode" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">zipcode</th>
+<th id="date_format" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">date_format</th>
+</tr></thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-06-10T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_left" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">1.74</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+<td class="gt_row gt_right" headers="date_format">2026-06-10</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-06-27T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USC00356749</td>
+<td class="gt_row gt_left" headers="attributes">,,7,2200</td>
+<td class="gt_row gt_right" headers="value">0.45</td>
+<td class="gt_row gt_right" headers="zipcode">97205</td>
+<td class="gt_row gt_right" headers="date_format">2026-06-27</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-08-19T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:US1MIKN0032</td>
+<td class="gt_row gt_left" headers="attributes">,,N,0700</td>
+<td class="gt_row gt_right" headers="value">1.39</td>
+<td class="gt_row gt_right" headers="zipcode">49504</td>
+<td class="gt_row gt_right" headers="date_format">2026-08-19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
 
 
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
