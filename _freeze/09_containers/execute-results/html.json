@@ -1,0 +1,15 @@
+{
+  "hash": "5b2989cd51d76511970c0972715c528a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Containers {{< fa droplet >}} {#sec-containers} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

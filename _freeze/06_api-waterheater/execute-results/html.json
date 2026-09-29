@@ -1,0 +1,15 @@
+{
+  "hash": "c1115f9bd0e774663aa31501704b5fe5",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# App APIs: Waterheaters {{< fa droplet >}} {#sec-app_apis} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "9e4642b56f328b97d56a73118265905a",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# GitHub Actions {{< fa droplet >}} {#sec-github_actions} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

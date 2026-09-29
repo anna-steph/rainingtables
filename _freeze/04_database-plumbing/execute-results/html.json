@@ -1,0 +1,15 @@
+{
+  "hash": "8a8e15158af82b0a9aa3c7f6122ab9c9",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Database Plumbing {{< fa droplet >}} {#sec-db-plumbing} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

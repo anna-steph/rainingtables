@@ -1,0 +1,15 @@
+{
+  "hash": "bafdafc93b00e75f1f182d9d8b2f4e1d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# On Cloud {{< fa droplet >}} {#sec-on-cloud}\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

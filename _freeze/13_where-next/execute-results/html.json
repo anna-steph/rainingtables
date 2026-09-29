@@ -1,0 +1,15 @@
+{
+  "hash": "a285efefd2929313e196bcf923f0be42",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# Where Next? {{< fa droplet >}} {#sec-next} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "hash": "4ab31f98de767235804a6f074f27b147",
+  "result": {
+    "engine": "knitr",
+    "markdown": "# A Tiny Rain App {{< fa droplet >}} {#sec-rain_apps} \n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
