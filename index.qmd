@@ -31,9 +31,8 @@ I receive no compensation for this blog or any recommended resources on it.
 **🌧️ Raining Tables 🌧️ Data Credits:**
 
 Daily summaries from NOAA's [National Centers for Environmental Information](https://www.ncei.noaa.gov/)'s [Global Historical
-Climatology Network](https://www.ncei.noaa.gov/access/search/data-search/daily-summaries). You all are awesome ❤️ 
-
-Weather data is critical infrastructure. 
+Climatology Network](https://www.ncei.noaa.gov/access/search/data-search/daily-summaries).
+You all are awesome ❤️ Weather data is critical infrastructure. 
 
 Formal data citation:
 

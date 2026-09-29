@@ -1,24 +1,24 @@
 #' Pull daily rain
 #'
-#' Pull daily precipitation data from the NOAA CDO Web Services API, either
+#' Pull daily precipitation data from the NOAA Climate Data Online (CDO) Web Services API, either
 #' for a zip code (using NOAA's own zip-to-station aggregation) or for one
 #' or more specific stations (e.g. the output of \code{find_nearby_stations()}).
 #'
 #' Dependencies: httr, dplyr
 #'
-#' Request a NOAA CDO Web Services token here:
+#' Request a NOAA CDO Web Services API key here:
 #' https://www.ncdc.noaa.gov/cdo-web/token
 #'
 #' NOAA's API documentation can be found here:
 #' https://www.ncdc.noaa.gov/cdo-web/webservices/v2
 #'
-#' You can search NOAA's data resources using their Climate Data Online Search here:
+#' You can search NOAA's data resources using their CDO Search here:
 #' https://www.ncei.noaa.gov/cdo-web/search
 #'
 #' A good explainer of how to search NOAA weather data:
 #' https://www.youtube.com/watch?v=YY8JYbEO3Ow
 #'
-#' @param api_key Character. Your NOAA CDO API token.
+#' @param api_key Character. Your NOAA CDO API key.
 #' @param zipcode Character. 5-digit US zip code (keep as character to
 #'   preserve leading zeros, e.g. "02138"). Ignored if \code{stationid} is
 #'   supplied.
@@ -63,6 +63,8 @@ pull_daily_rain <- function(
         location_params <- paste0("&locationid=ZIP:", zipcode)
     }
 
+    ## ---- url-string
+
     url_string <- paste0(
         "https://www.ncei.noaa.gov/cdo-web/api/v2/data?",
         "datasetid=GHCND",
@@ -77,6 +79,8 @@ pull_daily_rain <- function(
         "&limit=",
         limit
     )
+
+    ## ---- api-call
 
     response <- tryCatch(
         httr::RETRY(
@@ -103,6 +107,8 @@ pull_daily_rain <- function(
     )
 
     httr::stop_for_status(response, task = "pull data from NOAA CDO API")
+
+    ## ---- convert-json
 
     parsed <- httr::content(response, as = "parsed", type = "application/json")
 

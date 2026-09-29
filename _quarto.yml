@@ -1,6 +1,8 @@
 project:
   type: book
   output-dir: _book
+  resources:
+   - "R/*.R"
 
   # Pin working directory to the project root. Quarto's default is "file",
   # which is identical today (every chapter is at the root) but breaks
@@ -38,7 +40,7 @@ book:
 
   sidebar:
     style: docked
-    collapse-level: 1
+    collapse-level: 2
     border: false
 
   page-footer:
@@ -119,6 +121,7 @@ format:
     # Requires the downlit and xml2 R packages at render time. Drop it if you
     # want the CI render to work without any R installation at all.
     code-link: true
+    code-annotations: below
 
 # No PDF format on purpose. Adding one pulls TinyTeX into every CI run and is
 # the single most common reason a Quarto GitHub Action fails on the first try.

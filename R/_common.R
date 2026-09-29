@@ -6,7 +6,7 @@
 options(scipen = 999)
 
 # Libraries
-libraries <- c("dplyr", "readr", "ggplot2", "gt", "janitor")
+libraries <- c("dplyr", "readr", "ggplot2", "gt", "janitor", "downlit", "xml2")
 invisible(sapply(libraries, library, character.only = TRUE))
 
 # Package functions
