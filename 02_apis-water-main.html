@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.8.26">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-<title>2&nbsp; Public APIs: Our Water Main – Raining Tables</title>
+<title>2&nbsp; Public Data APIs: Our Water Main – Raining Tables</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_static-output-drip.html">Flow</a></li><li class="breadcrumb-item"><a href="./02_apis-water-main.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_static-output-drip.html">Flow</a></li><li class="breadcrumb-item"><a href="./02_apis-water-main.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -158,7 +158,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_apis-water-main.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -297,21 +297,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <a href="#api-calls" id="toc-api-calls" class="nav-link active" data-scroll-target="#api-calls">API Calls</a>
   <ul class="collapse">
 <li><a href="#our-api-key" id="toc-our-api-key" class="nav-link" data-scroll-target="#our-api-key">Our API key</a></li>
-  <li><a href="#what-were-asking-for" id="toc-what-were-asking-for" class="nav-link" data-scroll-target="#what-were-asking-for">What we’re asking for</a></li>
+  <li><a href="#what-were-requesting" id="toc-what-were-requesting" class="nav-link" data-scroll-target="#what-were-requesting">What we’re requesting</a></li>
   <li><a href="#the-url" id="toc-the-url" class="nav-link" data-scroll-target="#the-url">The URL</a></li>
   <li><a href="#calling-our-data" id="toc-calling-our-data" class="nav-link" data-scroll-target="#calling-our-data">Calling our data</a></li>
   <li><a href="#whats-returned" id="toc-whats-returned" class="nav-link" data-scroll-target="#whats-returned">What’s returned</a></li>
   <li><a href="#unnesting-our-table" id="toc-unnesting-our-table" class="nav-link" data-scroll-target="#unnesting-our-table">Unnesting our table</a></li>
   <li><a href="#what-if-your-api-call-fails" id="toc-what-if-your-api-call-fails" class="nav-link" data-scroll-target="#what-if-your-api-call-fails">What if your API call fails?</a></li>
-  <li><a href="#the-whole-function" id="toc-the-whole-function" class="nav-link" data-scroll-target="#the-whole-function">The whole function</a></li>
   </ul>
 </li>
   <li><a href="#additional-references" id="toc-additional-references" class="nav-link" data-scroll-target="#additional-references">Additional references</a></li>
   </ul></nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_static-output-drip.html">Flow</a></li><li class="breadcrumb-item"><a href="./02_apis-water-main.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></a></li></ol></nav><div class="quarto-title">
-<h1 class="title"><span id="sec-noaa-api" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span></h1>
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_static-output-drip.html">Flow</a></li><li class="breadcrumb-item"><a href="./02_apis-water-main.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></a></li></ol></nav><div class="quarto-title">
+<h1 class="title"><span id="sec-noaa-api" class="quarto-section-identifier"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></span></h1>
 </div>
 
 
@@ -325,10 +324,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 
-</header><p>Hey analyst! Welcome to <strong>Chapter 2 of 🌧️ Raining Tables</strong> 🌧️</p>
-<p>Hold onto your hats! 🪁 Today, we’re talking about APIs. ⛲</p>
-<p>Today we’re hooking up to our NOAA API water main. No more hauling csvs around; we’ll have our data on tap. 🚰</p>
-<p>Said differently: instead of re-downloading a csv every update, running our scripts will call NOAA’s API directly and pull their data into our programming environment.</p>
+</header><p>Hey analyst! Welcome to <strong>🌧️ Raining Tables Chapter 2</strong> 🌧️</p>
+<p>Hold onto your hats! 🪁 Today, we’re hooking up to our NOAA API water main. No more hauling csvs around; we’ll have our data on tap. 🚰</p>
+<p>Said differently: instead of manually re-downloading a csv every update, our scripts will call NOAA’s API directly and pull their data into our programming environment.</p>
 <p>✨ ~ <em>pretty amazing</em> ~ ✨</p>
 <p>So how do APIs work?</p>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -341,40 +339,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An API, or Application Programming Interface, is a programmatic way to interact with a webservice.</p>
-<p>For our purposes, automating a public data pull, the NOAA API gives us a way to request data using a script, rather than us manually clicking through their website’s user interface. Our API call returns the data we need in an efficient, standardized, and predictable way. 🚰</p>
+<p>An API, or <a href="https://en.wikipedia.org/wiki/API">Application Programming Interface</a>, is an application programming interface to connect computers or pieces of software. In contrast to a user interface, APIs run “under the hood” and aren’t intended to be used directly by people other than the programmer incorporating it into software.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> As programmers, if we’re using an API, we’re “calling” the API, in our case to request data directly from NOAA’s CDO database, and NOAA is the institution “hosting” the API.</p>
+<p>For our purposes, updating an analysis automatically, the NOAA API gives us a way to request data using a script rather than having to manually click through their website’s user interface. They’ve written out <a href="https://www.ncdc.noaa.gov/cdo-web/webservices/v2">API documentation</a> so we can format our call to retrieve the data we need. Our API call returns this data in an efficient, standardized, and predictable way. 🚰</p>
 </div>
 </div>
-<p>First, we need to request an <code>API key</code>🔑 , a user password we add to our API call so NOAA recognizes us, like our ID:</p>
-<ul>
+<p>First, we need to request an <code>API key</code>🔑 , a user password we add to our API call so NOAA recognizes us:</p>
+<ol type="1">
 <li>Go to NOAA’s <a href="https://www.ncdc.noaa.gov/cdo-web/token">API page</a> to request a key.<br>
 </li>
 <li>Submit the email address you want associated with this project.<br>
 </li>
 <li>They’ll send you an email with your <code>API key</code> 🔑, a long string of letters and numbers. Copy this string.<br>
 </li>
-<li>Save this string in .Renviron, your environment file (<a href="https://www.youtube.com/watch?v=D2yPyEPMTbo">see here for an example</a>), so your script knows where to look for it. Don’t copy-paste it directly in your code! If you copy-paste into your code, you could expose it when sharing code or posting on GitHub. Saving in .Renviron keeps your password a secret. 🤫</li>
-</ul>
-<p>Format your .Renviron file as:</p>
+<li>Save this string in .Renviron, your <a href="https://docs.posit.co/ide/user/ide/guide/environments/r/managing-r.html#renviron">R environment file</a> (<a href="https://www.youtube.com/watch?v=D2yPyEPMTbo">example here</a>), so your script knows where to look for it. Don’t copy-paste it directly in your code! If you copy-paste into your code, you could expose it when sharing code or posting on GitHub. Saving in .Renviron keeps your password a secret. 🤫</li>
+</ol>
+<p>Format API keys in your .Renviron file as:</p>
+<blockquote class="blockquote">
 <p><code>NOAA_CDO_KEY=abcde12345</code></p>
-<p>where <code>NOAA_CDO_KEY</code> is an example name you make up for your key and <code>abcde12345</code> is the <code>API key</code> 🔑 you received from NOAA.</p>
-<p>No spaces, no quotes.</p>
+</blockquote>
+<p>where <code>NOAA_CDO_KEY</code> is a memorable name you make up for your key and <code>abcde12345</code> is the <code>API key</code> 🔑 you received from NOAA. No spaces, no quotes.</p>
 <p>Have your API key safely saved in .Renviron? Excellent, let’s start! 🥳</p>
 <section id="api-calls" class="level2"><h2 class="anchored" data-anchor-id="api-calls">API Calls</h2>
-<p>Most API calls are a URL that combine your unique <code>API key</code> 🔑 with a collection of other strings, data parameters that identify our specific data cut. These parameters might specify a particular date range, series ID, time frequency, unit of measurement, data flags, or other attributes.</p>
-<p>Knowing how to format the call requires reading the data source materials and reviewing their examples. The format’s quite fiddly! If we don’t string the parameters together in the exact order, the API call won’t go through.</p>
+<p>Many public data API calls are formatted as a URL that combines your unique <code>API key</code> 🔑 with a collection of other parameters to identify and request our specific data cut. A public data API URL typically first specifies a particular database or dataset maintained by the institution. It might also specify a date range, series ID, time frequency, unit of measurement, data flags, or other attributes you can use to your data cut.</p>
+<p>Knowing how to format the call requires reading your data source’s API user manual and reviewing provided examples. The format’s quite fiddly! If we don’t string the parameters together in the exact order, the API call won’t go through.</p>
 <p>Let’s walk through the NOAA call from <a href="R/pull_daily_rain.R"><code>R/pull_daily_rain</code></a>. Remember we’re hooking up to our data source water main ⛲: we’ll explore the different pipes, then connect the pipes together and test our taps. 🚰</p>
 <section id="our-api-key" class="level3"><h3 class="anchored" data-anchor-id="our-api-key">Our API key</h3>
-<p>For calling data in a report, we first save our key as an object (<code>api_key</code>) and use nchar() to check it exists without printing it and exposing it:</p>
+<p>For calling data in an analysis, we first save our key as the object <code>api_key</code> and use nchar() to check it exists without printing it and exposing it:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># Sys.getenv() is how we call our key from the .Renviron environment file 🔑</span></span>
 <span><span class="va">api_key</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.getenv.html">Sys.getenv</a></span><span class="op">(</span><span class="st">"NOAA_CDO_KEY"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/nchar.html">nchar</a></span><span class="op">(</span><span class="va">api_key</span><span class="op">)</span> <span class="co"># returns 32 if it's set, 0 if it isn't</span></span>
 <span><span class="co">#&gt; [1] 32</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-</section><section id="what-were-asking-for" class="level3"><h3 class="anchored" data-anchor-id="what-were-asking-for">What we’re asking for</h3>
-<p>We may want many cuts of data, so <a href="R/pull_daily_rain.R"><code>R/pull_daily_rain</code></a> API call should be relatively flexibly and easy to change. For this we set our data parameters as function arguments. Change our arguments lets us retrieve different cuts of data.</p>
-<p>To show this concretely, let’s set the parameters for a data cut for <a href="https://www.google.com/maps/place/Portland,+OR+97205/@45.5173805,-122.740049,13z/data=!3m1!4b1!4m6!3m5!1s0x54950a1cf1ebc7d1:0xd47124b9bd5b8f22!8m2!3d45.5205043!4d-122.707349!16s%2Fm%2F020r733?entry=ttu&amp;g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D">zipcode 97205</a>, the beautiful but rainy Portland, Oregon. 🌧️</p>
+</section><section id="what-were-requesting" class="level3"><h3 class="anchored" data-anchor-id="what-were-requesting">What we’re requesting</h3>
+<p>We may want many cuts of data, so <a href="R/pull_daily_rain.R"><code>R/pull_daily_rain</code></a> API call should be flexible enough to easily change the data parameters we care about. For this, we set our data parameters as function arguments. We can then retrieve different cuts of data by changing the arguments.</p>
+<p>To show this concretely, let’s set the parameters for a data cut for <a href="https://www.google.com/maps/place/Portland,+OR+97205/@45.5173805,-122.740049,13z/data=!3m1!4b1!4m6!3m5!1s0x54950a1cf1ebc7d1:0xd47124b9bd5b8f22!8m2!3d45.5205043!4d-122.707349!16s%2Fm%2F020r733?entry=ttu&amp;g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D">zipcode 97205</a>, the beautiful but rainy city of Portland, Oregon. 🌧️</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="va">zipcode</span> <span class="op">&lt;-</span> <span class="st">"97205"</span></span>
 <span><span class="va">date_start</span> <span class="op">&lt;-</span> <span class="st">"2024-01-01"</span></span>
@@ -382,9 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="va">units</span> <span class="op">&lt;-</span> <span class="st">"standard"</span></span>
 <span><span class="va">limit</span> <span class="op">&lt;-</span> <span class="fl">1000</span></span>
 <span></span>
-<span><span class="va">location_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"&amp;locationid=ZIP:"</span>, <span class="va">zipcode</span><span class="op">)</span> <span class="co"># specifies we're using zipcodes for location</span></span>
-<span><span class="va">location_params</span></span>
-<span><span class="co">#&gt; [1] "&amp;locationid=ZIP:97205"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="va">location_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"&amp;locationid=ZIP:"</span>, <span class="va">zipcode</span><span class="op">)</span> <span class="co"># specifies we're using zipcodes for location</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Side note: if you look in <a href="R/pull_daily_rain.R"><code>R/pull_daily_rain</code></a>, you’ll see it’s our choice to use zip codes to specify location in <code>location_params</code>. NOAA also gives us the option to specify location using weather station IDs, IDs for the specific sites weather data are collected. Finding weather station IDs takes a bit more digging, though, so we’re using zip codes.</p>
 </section><section id="the-url" class="level3"><h3 class="anchored" data-anchor-id="the-url">The URL</h3>
@@ -393,37 +390,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># stringing our data cut parameters to NOAA's URL string:</span></span>
 <span></span>
 <span><span class="va">url_string</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span></span>
-<span>  <span class="st">"https://www.ncei.noaa.gov/cdo-web/api/v2/data?"</span>,</span>
-<span>  <span class="st">"datasetid=GHCND"</span>,</span>
-<span>  <span class="st">"&amp;datatypeid=PRCP"</span>,</span>
-<span>  <span class="va">location_params</span>,</span>
-<span>  <span class="st">"&amp;startdate="</span>, <span class="va">date_start</span>,</span>
-<span>  <span class="st">"&amp;enddate="</span>, <span class="va">date_end</span>,</span>
-<span>  <span class="st">"&amp;units="</span>, <span class="va">units</span>,</span>
-<span>  <span class="st">"&amp;limit="</span>, <span class="va">limit</span></span>
+<span>  <span class="st">"https://www.ncei.noaa.gov/cdo-web/api/v2/data?"</span>, <span class="co"># base url string</span></span>
+<span>  <span class="st">"datasetid=GHCND"</span>, <span class="co"># the dataset we want</span></span>
+<span>  <span class="st">"&amp;datatypeid=PRCP"</span>, <span class="co"># the data type we want (precipitation)</span></span>
+<span>  <span class="va">location_params</span>, <span class="co"># our location params</span></span>
+<span>  <span class="st">"&amp;startdate="</span>, <span class="va">date_start</span>, <span class="co"># start date</span></span>
+<span>  <span class="st">"&amp;enddate="</span>, <span class="va">date_end</span>, <span class="co"># end date</span></span>
+<span>  <span class="st">"&amp;units="</span>, <span class="va">units</span>, <span class="co"># units of measurement</span></span>
+<span>  <span class="st">"&amp;limit="</span>, <span class="va">limit</span> <span class="co"># how many data observations included in the API's response</span></span>
 <span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># just keep stringing 🐟</span></span>
-<span></span>
-<span><span class="va">url_string</span></span>
-<span><span class="co">#&gt; [1] "https://www.ncei.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&amp;datatypeid=PRCP&amp;locationid=ZIP:97205&amp;startdate=2024-01-01&amp;enddate=2024-12-31&amp;units=standard&amp;limit=1000"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="co"># just keep stringing 🐟</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="url-formats" class="level4"><h4 class="anchored" data-anchor-id="url-formats">URL formats</h4>
-<p>Note: the NOAA API’s standard URL string typically won’t change <em>unless</em> NOAA intentionally updates its backend infrastructure. If we’re building a product using NOAA’s API, we should subscribe to NOAA updates or notifications so they can communicate any changes to us.</p>
-<p>Reliable public data flows and user communications are hallmarks of working #publicdatainfrastructure. ⛲ 🌉 ⛲ 🚃 ⛲ 🌆</p>
-<p>We’ve added all the parameters we need for our data cut! Last step: including your <code>API key</code>. 🔑</p>
+<p>The NOAA API’s base URL string typically won’t change <em>unless</em> NOAA intentionally updates its backend infrastructure. If we’re building a product using NOAA’s API, we should subscribe to NOAA updates or notifications so they can communicate those kinds of changes to us. Reliable public data flows and user communications are hallmarks of working #publicdatainfrastructure.</p>
+<p>We’ve added all the parameters we need for our data cut! Last step: including your <code>API key</code> 🔑.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Where the key goes
+<span class="screen-reader-only">Important</span>Where the API key goes
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In the case of the NOAA API, we’re not adding our <code>API key</code> 🔑 directly into our call URL. NOAA wants it in a request <em>header</em>, which is a bit different (see code below).</p>
-<p>Many other APIs expect <code>&amp;api_key=...</code> directly added to <code>url_string</code>. If that’s the case, the full URL itself is a secret: don’t print it, don’t log it, don’t paste it anywhere. 🤫 For other APIs, review their user manual and check their API call format.</p>
+<p>In the case of the NOAA API, we’re not adding our <code>API key</code> 🔑 directly into our call URL, as Census and some other public data sources do. NOAA wants it in a request <em>header</em>, which is a bit different (see code below).</p>
+<p>If a different public data API expects <code>&amp;api_key=...</code> directly added to <code>url_string</code>, remember the full URL string then contains your <code>API key</code> 🔑 and becomes a secret: don’t print it, don’t log it, don’t paste it anywhere. 🤫 For other APIs, review their documentation and check their API call examples.</p>
 </div>
 </div>
 </section></section><section id="calling-our-data" class="level3"><h3 class="anchored" data-anchor-id="calling-our-data">Calling our data</h3>
@@ -441,7 +433,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span></span>
 <span><span class="va">response</span></span>
 <span><span class="co">#&gt; Response [https://www.ncei.noaa.gov/cdo-web/api/v2/data?datasetid=GHCND&amp;datatypeid=PRCP&amp;locationid=ZIP:97205&amp;startdate=2024-01-01&amp;enddate=2024-12-31&amp;units=standard&amp;limit=1000]</span></span>
-<span><span class="co">#&gt;   Date: 2026-09-29 23:40</span></span>
+<span><span class="co">#&gt;   Date: 2026-10-27 11:38</span></span>
 <span><span class="co">#&gt;   Status: 200</span></span>
 <span><span class="co">#&gt;   Content-Type: application/json</span></span>
 <span><span class="co">#&gt;   Size: 41.5 kB</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -645,23 +637,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co"># the first five rows in our dataframe in a simple table</span></span>
 <span><span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">rain</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="yuqtbuzlvz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#yuqtbuzlvz table {
+<div id="auyerzgjfo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#auyerzgjfo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#yuqtbuzlvz thead, #yuqtbuzlvz tbody, #yuqtbuzlvz tfoot, #yuqtbuzlvz tr, #yuqtbuzlvz td, #yuqtbuzlvz th {
+#auyerzgjfo thead, #auyerzgjfo tbody, #auyerzgjfo tfoot, #auyerzgjfo tr, #auyerzgjfo td, #auyerzgjfo th {
   border-style: none;
 }
 
-#yuqtbuzlvz p {
+#auyerzgjfo p {
   margin: 0;
   padding: 0;
 }
 
-#yuqtbuzlvz .gt_table {
+#auyerzgjfo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -687,12 +679,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_caption {
+#auyerzgjfo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#yuqtbuzlvz .gt_title {
+#auyerzgjfo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -704,7 +696,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#yuqtbuzlvz .gt_subtitle {
+#auyerzgjfo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -716,7 +708,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#yuqtbuzlvz .gt_heading {
+#auyerzgjfo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -728,13 +720,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_bottom_border {
+#auyerzgjfo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_col_headings {
+#auyerzgjfo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -749,7 +741,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_col_heading {
+#auyerzgjfo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -769,7 +761,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yuqtbuzlvz .gt_column_spanner_outer {
+#auyerzgjfo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -781,15 +773,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#yuqtbuzlvz .gt_column_spanner_outer:first-child {
+#auyerzgjfo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#yuqtbuzlvz .gt_column_spanner_outer:last-child {
+#auyerzgjfo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#yuqtbuzlvz .gt_column_spanner {
+#auyerzgjfo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -801,11 +793,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#yuqtbuzlvz .gt_spanner_row {
+#auyerzgjfo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#yuqtbuzlvz .gt_group_heading {
+#auyerzgjfo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -831,7 +823,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#yuqtbuzlvz .gt_empty_group_heading {
+#auyerzgjfo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -846,15 +838,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#yuqtbuzlvz .gt_from_md > :first-child {
+#auyerzgjfo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#yuqtbuzlvz .gt_from_md > :last-child {
+#auyerzgjfo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#yuqtbuzlvz .gt_row {
+#auyerzgjfo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -873,7 +865,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#yuqtbuzlvz .gt_stub {
+#auyerzgjfo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -886,7 +878,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yuqtbuzlvz .gt_stub_row_group {
+#auyerzgjfo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -900,15 +892,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#yuqtbuzlvz .gt_row_group_first td {
+#auyerzgjfo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#yuqtbuzlvz .gt_row_group_first th {
+#auyerzgjfo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#yuqtbuzlvz .gt_summary_row {
+#auyerzgjfo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -918,16 +910,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yuqtbuzlvz .gt_first_summary_row {
+#auyerzgjfo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_first_summary_row.thick {
+#auyerzgjfo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#yuqtbuzlvz .gt_last_summary_row {
+#auyerzgjfo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -937,7 +929,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_grand_summary_row {
+#auyerzgjfo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -947,7 +939,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yuqtbuzlvz .gt_first_grand_summary_row {
+#auyerzgjfo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -957,7 +949,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_last_grand_summary_row_top {
+#auyerzgjfo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -967,11 +959,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_striped {
+#auyerzgjfo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#yuqtbuzlvz .gt_table_body {
+#auyerzgjfo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -980,7 +972,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_footnotes {
+#auyerzgjfo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -994,7 +986,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_footnote {
+#auyerzgjfo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1003,7 +995,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yuqtbuzlvz .gt_sourcenotes {
+#auyerzgjfo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1017,7 +1009,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#yuqtbuzlvz .gt_sourcenote {
+#auyerzgjfo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1025,72 +1017,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#yuqtbuzlvz .gt_left {
+#auyerzgjfo .gt_left {
   text-align: left;
 }
 
-#yuqtbuzlvz .gt_center {
+#auyerzgjfo .gt_center {
   text-align: center;
 }
 
-#yuqtbuzlvz .gt_right {
+#auyerzgjfo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#yuqtbuzlvz .gt_font_normal {
+#auyerzgjfo .gt_font_normal {
   font-weight: normal;
 }
 
-#yuqtbuzlvz .gt_font_bold {
+#auyerzgjfo .gt_font_bold {
   font-weight: bold;
 }
 
-#yuqtbuzlvz .gt_font_italic {
+#auyerzgjfo .gt_font_italic {
   font-style: italic;
 }
 
-#yuqtbuzlvz .gt_super {
+#auyerzgjfo .gt_super {
   font-size: 65%;
 }
 
-#yuqtbuzlvz .gt_footnote_marks {
+#auyerzgjfo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#yuqtbuzlvz .gt_asterisk {
+#auyerzgjfo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#yuqtbuzlvz .gt_indent_1 {
+#auyerzgjfo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#yuqtbuzlvz .gt_indent_2 {
+#auyerzgjfo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#yuqtbuzlvz .gt_indent_3 {
+#auyerzgjfo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#yuqtbuzlvz .gt_indent_4 {
+#auyerzgjfo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#yuqtbuzlvz .gt_indent_5 {
+#auyerzgjfo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#yuqtbuzlvz .katex-display {
+#auyerzgjfo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#yuqtbuzlvz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#auyerzgjfo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1154,7 +1146,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section><section id="what-if-your-api-call-fails" class="level3"><h3 class="anchored" data-anchor-id="what-if-your-api-call-fails">What if your API call fails?</h3>
 <p>It’s pretty common for API calls to fail on the first try, especially if you’re requesting a large amount of data or if your connection’s spotty. We can usually resolve this by trying multiple times, like in <code><a href="https://httr.r-lib.org/reference/RETRY.html">httr::RETRY()</a></code>. If your call’s still failing or simply taking a long time, and you’re sure it’s not a bug, consider breaking up your data request into smaller cuts. For example, if you’re having trouble pulling ten years of data, try two calls pulling five years of data.</p>
 <p>If at first you don’t succeed, try, try again! 😆</p>
-<p>More importantly, how do we <em>know</em> if our call fails? Unless our program flags the fail, it’ll continue running, try to parse the error message, and error out. To prevent this from happening, we need to add checks:</p>
+<p>More importantly, how do we <em>know</em> if our call fails? Unless our program flags the fail, it’ll continue running, try to parse the error message, and halt and force us to debug. To prevent this from happening, we need to add checks:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># us calling an API with a nonexistent key</span></span>
 <span><span class="va">bad</span> <span class="op">&lt;-</span> <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/GET.html">GET</a></span><span class="op">(</span><span class="va">url_string</span>, <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/add_headers.html">add_headers</a></span><span class="op">(</span>token <span class="op">=</span> <span class="st">"definitely-not-a-token"</span><span class="op">)</span><span class="op">)</span></span>
@@ -1165,138 +1157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span><span class="co">#&gt; Error:</span></span>
 <span><span class="co">#&gt; ! Bad Request (HTTP 400). Failed to pull data from NOAA CDO API.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>Despite the bad call, <code>GET()</code> doesn’t throw any errors. 🧐 Counterintuitively, <code>GET()</code> has no reason to flag failed calls unless we tell it to. <code>stop_for_status()</code> is our flag. Without it, our script sails on 🌊 ⛵ 🏔️, tries to parse an error message as data 💥 🏔️, and stalls out. If we don’t add this kind of check, we’ll be wondering why our run failed and have to debug.</p>
-</section><section id="the-whole-function" class="level3"><h3 class="anchored" data-anchor-id="the-whole-function">The whole function</h3>
-<p>Everything above, with the printing taken out and the edge cases put in:</p>
-<div class="cell">
-<div class="code-with-filename">
-<details open="" class="code-fold"><summary>Code</summary><div class="code-with-filename-file">
-<pre><strong>R/pull_daily_rain.R</strong></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co">#' Pull daily rain</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' Pull daily precipitation data from the NOAA Climate Data Online (CDO) Web Services API, either</span></span>
-<span><span class="co">#' for a zip code (using NOAA's own zip-to-station aggregation) or for one</span></span>
-<span><span class="co">#' or more specific stations (e.g. the output of \code{find_nearby_stations()}).</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' Dependencies: httr, dplyr</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' Request a NOAA CDO Web Services API key here:</span></span>
-<span><span class="co">#' https://www.ncdc.noaa.gov/cdo-web/token</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' NOAA's API documentation can be found here:</span></span>
-<span><span class="co">#' https://www.ncdc.noaa.gov/cdo-web/webservices/v2</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' You can search NOAA's data resources using their CDO Search here:</span></span>
-<span><span class="co">#' https://www.ncei.noaa.gov/cdo-web/search</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' A good explainer of how to search NOAA weather data:</span></span>
-<span><span class="co">#' https://www.youtube.com/watch?v=YY8JYbEO3Ow</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' @param api_key Character. Your NOAA CDO API key.</span></span>
-<span><span class="co">#' @param zipcode Character. 5-digit US zip code (keep as character to</span></span>
-<span><span class="co">#'   preserve leading zeros, e.g. "02138"). Ignored if \code{stationid} is</span></span>
-<span><span class="co">#'   supplied.</span></span>
-<span><span class="co">#' @param stationid Character vector, optional. One or more NOAA station IDs</span></span>
-<span><span class="co">#'   (e.g. "GHCND:US1WAKG0072"), such as the \code{id} column returned by</span></span>
-<span><span class="co">#'   \code{find_nearby_stations()}. When supplied, data is pulled for these</span></span>
-<span><span class="co">#'   specific stations instead of the zip code's default station pool.</span></span>
-<span><span class="co">#' @param date_start Character. Start date, format "YYYY-MM-DD".</span></span>
-<span><span class="co">#' @param date_end Character. End date, format "YYYY-MM-DD". NOAA CDO API</span></span>
-<span><span class="co">#'   requires date ranges of one year or less per request for GHCND.</span></span>
-<span><span class="co">#' @param units Character. "standard" or "metric". Defaults to "standard".</span></span>
-<span><span class="co">#' @param limit Integer. Max records per request (NOAA's ceiling is 1000).</span></span>
-<span><span class="co">#'   Defaults to 1000.</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' @return A data frame of daily precipitation (PRCP) records, or an empty</span></span>
-<span><span class="co">#'   data frame with a warning if no data is returned.</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' @importFrom httr RETRY add_headers stop_for_status content timeout</span></span>
-<span><span class="co">#' @importFrom dplyr bind_rows</span></span>
-<span><span class="co">#'</span></span>
-<span><span class="co">#' @export</span></span>
-<span><span class="va">pull_daily_rain</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span></span>
-<span>    <span class="va">api_key</span>,</span>
-<span>    <span class="va">zipcode</span> <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>    <span class="va">stationid</span> <span class="op">=</span> <span class="cn">NULL</span>,</span>
-<span>    <span class="va">date_start</span>,</span>
-<span>    <span class="va">date_end</span>,</span>
-<span>    <span class="va">units</span> <span class="op">=</span> <span class="st">"standard"</span>,</span>
-<span>    <span class="va">limit</span> <span class="op">=</span> <span class="fl">1000</span>,</span>
-<span>    <span class="va">timeout_sec</span> <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>    <span class="va">retry_times</span> <span class="op">=</span> <span class="fl">3</span></span>
-<span><span class="op">)</span> <span class="op">{</span></span>
-<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">zipcode</span><span class="op">)</span> <span class="op">&amp;&amp;</span> <span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">stationid</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>        <span class="kw"><a href="https://rdrr.io/r/base/stop.html">stop</a></span><span class="op">(</span><span class="st">"Supply either zipcode or stationid."</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span></span>
-<span>    <span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="fu"><a href="https://rdrr.io/r/base/NULL.html">is.null</a></span><span class="op">(</span><span class="va">stationid</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>        <span class="co"># one or more stations: repeat stationid= for each, per NOAA's API</span></span>
-<span>        <span class="va">location_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"&amp;stationid="</span>, <span class="va">stationid</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span></span>
-<span>    <span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span>        <span class="va">zipcode</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">zipcode</span><span class="op">)</span> <span class="co"># guard against leading-zero loss</span></span>
-<span>        <span class="va">location_params</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span><span class="st">"&amp;locationid=ZIP:"</span>, <span class="va">zipcode</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span></span>
-<span>    <span class="co">## ---- url-string</span></span>
-<span></span>
-<span>    <span class="va">url_string</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span><span class="op">(</span></span>
-<span>        <span class="st">"https://www.ncei.noaa.gov/cdo-web/api/v2/data?"</span>,</span>
-<span>        <span class="st">"datasetid=GHCND"</span>,</span>
-<span>        <span class="st">"&amp;datatypeid=PRCP"</span>,</span>
-<span>        <span class="va">location_params</span>,</span>
-<span>        <span class="st">"&amp;startdate="</span>,</span>
-<span>        <span class="va">date_start</span>,</span>
-<span>        <span class="st">"&amp;enddate="</span>,</span>
-<span>        <span class="va">date_end</span>,</span>
-<span>        <span class="st">"&amp;units="</span>,</span>
-<span>        <span class="va">units</span>,</span>
-<span>        <span class="st">"&amp;limit="</span>,</span>
-<span>        <span class="va">limit</span></span>
-<span>    <span class="op">)</span></span>
-<span></span>
-<span>    <span class="co">## ---- api-call</span></span>
-<span></span>
-<span>    <span class="va">response</span> <span class="op">&lt;-</span> <span class="kw"><a href="https://rdrr.io/r/base/conditions.html">tryCatch</a></span><span class="op">(</span></span>
-<span>        <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/RETRY.html">RETRY</a></span><span class="op">(</span></span>
-<span>            verb <span class="op">=</span> <span class="st">"GET"</span>,</span>
-<span>            url <span class="op">=</span> <span class="va">url_string</span>,</span>
-<span>            <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/add_headers.html">add_headers</a></span><span class="op">(</span>token <span class="op">=</span> <span class="va">api_key</span><span class="op">)</span>,</span>
-<span>            <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/timeout.html">timeout</a></span><span class="op">(</span><span class="va">timeout_sec</span><span class="op">)</span>,</span>
-<span>            times <span class="op">=</span> <span class="va">retry_times</span>,</span>
-<span>            pause_base <span class="op">=</span> <span class="fl">1</span>,</span>
-<span>            pause_cap <span class="op">=</span> <span class="fl">10</span>,</span>
-<span>            quiet <span class="op">=</span> <span class="cn">TRUE</span></span>
-<span>        <span class="op">)</span>,</span>
-<span>        error <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">e</span><span class="op">)</span> <span class="op">{</span></span>
-<span>            <span class="kw"><a href="https://rdrr.io/r/base/stop.html">stop</a></span><span class="op">(</span></span>
-<span>                <span class="st">"Failed to reach NOAA CDO API after "</span>,</span>
-<span>                <span class="va">retry_times</span>,</span>
-<span>                <span class="st">" attempts -- "</span>,</span>
-<span>                <span class="st">"check your internet connection or try increasing timeout_sec. "</span>,</span>
-<span>                <span class="st">"Original error: "</span>,</span>
-<span>                <span class="fu"><a href="https://rdrr.io/r/base/conditions.html">conditionMessage</a></span><span class="op">(</span><span class="va">e</span><span class="op">)</span>,</span>
-<span>                call. <span class="op">=</span> <span class="cn">FALSE</span></span>
-<span>            <span class="op">)</span></span>
-<span>        <span class="op">}</span></span>
-<span>    <span class="op">)</span></span>
-<span></span>
-<span>    <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/stop_for_status.html">stop_for_status</a></span><span class="op">(</span><span class="va">response</span>, task <span class="op">=</span> <span class="st">"pull data from NOAA CDO API"</span><span class="op">)</span></span>
-<span></span>
-<span>    <span class="co">## ---- convert-json</span></span>
-<span></span>
-<span>    <span class="va">parsed</span> <span class="op">&lt;-</span> <span class="fu">httr</span><span class="fu">::</span><span class="fu"><a href="https://httr.r-lib.org/reference/content.html">content</a></span><span class="op">(</span><span class="va">response</span>, as <span class="op">=</span> <span class="st">"parsed"</span>, type <span class="op">=</span> <span class="st">"application/json"</span><span class="op">)</span></span>
-<span></span>
-<span>    <span class="kw">if</span> <span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">results</span><span class="op">)</span> <span class="op">==</span> <span class="fl">0</span><span class="op">)</span> <span class="op">{</span></span>
-<span>        <span class="kw"><a href="https://rdrr.io/r/base/warning.html">warning</a></span><span class="op">(</span><span class="st">"No precipitation data returned for this request."</span><span class="op">)</span></span>
-<span>        <span class="kw"><a href="https://rdrr.io/r/base/function.html">return</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/data.frame.html">data.frame</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span>    <span class="op">}</span></span>
-<span></span>
-<span>    <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/bind_rows.html">bind_rows</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="va">parsed</span><span class="op">$</span><span class="va">results</span>, <span class="va">as.data.frame</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</details>
-</div>
-</div>
+<p><code>stop_for_status()</code> flags any failed calls. Without it, our script sails on 🌊 ⛵ 🏔️, tries to parse an error message as data 💥 🏔️, and stalls out.</p>
 </section></section><section id="additional-references" class="level2"><h2 class="anchored" data-anchor-id="additional-references">Additional references</h2>
 <p>Further reading &amp; viewing on working with APIs and JSON:</p>
 <table class="table">
@@ -1322,7 +1183,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 
 
-</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><hr>
+<ol>
+<li id="fn1"><p>Wikipedia, “API,” https://en.wikipedia.org/wiki/API.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol></section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();

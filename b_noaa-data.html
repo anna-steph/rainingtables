@@ -157,7 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_apis-water-main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -323,7 +323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="mind-your-metadata" class="level2"><h2 class="anchored" data-anchor-id="mind-your-metadata">Mind Your Metadata</h2>
 <p>With clean, accessible, and detailed data like NOAA’s, you may be tempted to jump into analysis and overlook key metadata and data exploration. <strong>Resist!</strong> Some metadata fields contain user notes from our nice NOAA nerds. They want you to know what you’re looking at.</p>
 <p>🌂</p>
-<p>As an example, let’s pick iconic places in <a href="https://qz.com/rainiest-wettest-driest-us-cities#the-wettest-cities-in-america--and-the-driest">a few rainy cities</a> to pull data from:</p>
+<p>As an example, let’s pick iconic places in <a href="https://qz.com/rainiest-wettest-driest-us-cities#the-wettest-cities-in-america--and-the-driest">three rainy cities</a> to pull data from:</p>
 <table class="table">
 <thead><tr class="header">
 <th>Rainy City</th>
@@ -381,23 +381,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># print rain table</span></span>
 <span><span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">example_table</span>, <span class="fl">10</span><span class="op">)</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="vffjdrtaoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vffjdrtaoz table {
+<div id="uockqchdqq" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#uockqchdqq table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vffjdrtaoz thead, #vffjdrtaoz tbody, #vffjdrtaoz tfoot, #vffjdrtaoz tr, #vffjdrtaoz td, #vffjdrtaoz th {
+#uockqchdqq thead, #uockqchdqq tbody, #uockqchdqq tfoot, #uockqchdqq tr, #uockqchdqq td, #uockqchdqq th {
   border-style: none;
 }
 
-#vffjdrtaoz p {
+#uockqchdqq p {
   margin: 0;
   padding: 0;
 }
 
-#vffjdrtaoz .gt_table {
+#uockqchdqq .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -423,12 +423,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_caption {
+#uockqchdqq .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vffjdrtaoz .gt_title {
+#uockqchdqq .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -440,7 +440,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#vffjdrtaoz .gt_subtitle {
+#uockqchdqq .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -452,7 +452,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#vffjdrtaoz .gt_heading {
+#uockqchdqq .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -464,13 +464,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_bottom_border {
+#uockqchdqq .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_col_headings {
+#uockqchdqq .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -485,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_col_heading {
+#uockqchdqq .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -505,7 +505,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vffjdrtaoz .gt_column_spanner_outer {
+#uockqchdqq .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -517,15 +517,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#vffjdrtaoz .gt_column_spanner_outer:first-child {
+#uockqchdqq .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vffjdrtaoz .gt_column_spanner_outer:last-child {
+#uockqchdqq .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vffjdrtaoz .gt_column_spanner {
+#uockqchdqq .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -537,11 +537,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#vffjdrtaoz .gt_spanner_row {
+#uockqchdqq .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vffjdrtaoz .gt_group_heading {
+#uockqchdqq .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -567,7 +567,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#vffjdrtaoz .gt_empty_group_heading {
+#uockqchdqq .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -582,15 +582,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#vffjdrtaoz .gt_from_md > :first-child {
+#uockqchdqq .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vffjdrtaoz .gt_from_md > :last-child {
+#uockqchdqq .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vffjdrtaoz .gt_row {
+#uockqchdqq .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -609,7 +609,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vffjdrtaoz .gt_stub {
+#uockqchdqq .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -622,7 +622,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vffjdrtaoz .gt_stub_row_group {
+#uockqchdqq .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -636,15 +636,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#vffjdrtaoz .gt_row_group_first td {
+#uockqchdqq .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vffjdrtaoz .gt_row_group_first th {
+#uockqchdqq .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vffjdrtaoz .gt_summary_row {
+#uockqchdqq .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -654,16 +654,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vffjdrtaoz .gt_first_summary_row {
+#uockqchdqq .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_first_summary_row.thick {
+#uockqchdqq .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vffjdrtaoz .gt_last_summary_row {
+#uockqchdqq .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -673,7 +673,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_grand_summary_row {
+#uockqchdqq .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -683,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vffjdrtaoz .gt_first_grand_summary_row {
+#uockqchdqq .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -693,7 +693,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_last_grand_summary_row_top {
+#uockqchdqq .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -703,11 +703,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_striped {
+#uockqchdqq .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vffjdrtaoz .gt_table_body {
+#uockqchdqq .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -716,7 +716,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_footnotes {
+#uockqchdqq .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -730,7 +730,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_footnote {
+#uockqchdqq .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -739,7 +739,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vffjdrtaoz .gt_sourcenotes {
+#uockqchdqq .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -753,7 +753,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vffjdrtaoz .gt_sourcenote {
+#uockqchdqq .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -761,72 +761,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vffjdrtaoz .gt_left {
+#uockqchdqq .gt_left {
   text-align: left;
 }
 
-#vffjdrtaoz .gt_center {
+#uockqchdqq .gt_center {
   text-align: center;
 }
 
-#vffjdrtaoz .gt_right {
+#uockqchdqq .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vffjdrtaoz .gt_font_normal {
+#uockqchdqq .gt_font_normal {
   font-weight: normal;
 }
 
-#vffjdrtaoz .gt_font_bold {
+#uockqchdqq .gt_font_bold {
   font-weight: bold;
 }
 
-#vffjdrtaoz .gt_font_italic {
+#uockqchdqq .gt_font_italic {
   font-style: italic;
 }
 
-#vffjdrtaoz .gt_super {
+#uockqchdqq .gt_super {
   font-size: 65%;
 }
 
-#vffjdrtaoz .gt_footnote_marks {
+#uockqchdqq .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vffjdrtaoz .gt_asterisk {
+#uockqchdqq .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vffjdrtaoz .gt_indent_1 {
+#uockqchdqq .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vffjdrtaoz .gt_indent_2 {
+#uockqchdqq .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vffjdrtaoz .gt_indent_3 {
+#uockqchdqq .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vffjdrtaoz .gt_indent_4 {
+#uockqchdqq .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vffjdrtaoz .gt_indent_5 {
+#uockqchdqq .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vffjdrtaoz .katex-display {
+#uockqchdqq .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vffjdrtaoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#uockqchdqq div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -841,7 +841,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-01T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-07-27T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
@@ -849,7 +849,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-02T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-07-28T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.07</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-07-29T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.47</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-07-30T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
@@ -857,7 +873,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-03T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-07-31T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
@@ -865,39 +881,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-04T00:00:00</td>
-<td class="gt_row gt_left" headers="datatype">PRCP</td>
-<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
-<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">0.00</td>
-<td class="gt_row gt_right" headers="zipcode">13202</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-05T00:00:00</td>
-<td class="gt_row gt_left" headers="datatype">PRCP</td>
-<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
-<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">0.00</td>
-<td class="gt_row gt_right" headers="zipcode">13202</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-06T00:00:00</td>
-<td class="gt_row gt_left" headers="datatype">PRCP</td>
-<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
-<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">0.11</td>
-<td class="gt_row gt_right" headers="zipcode">13202</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-07T00:00:00</td>
-<td class="gt_row gt_left" headers="datatype">PRCP</td>
-<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
-<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">0.01</td>
-<td class="gt_row gt_right" headers="zipcode">13202</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-08T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-08-01T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
@@ -905,19 +889,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 <tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-09T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-08-02T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">0.45</td>
+<td class="gt_row gt_right" headers="value">0.14</td>
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-10T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-08-03T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_right" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">1.74</td>
+<td class="gt_row gt_right" headers="value">0.10</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="date">2026-08-04T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
+<td class="gt_row gt_right" headers="zipcode">13202</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="date">2026-08-05T00:00:00</td>
+<td class="gt_row gt_left" headers="datatype">PRCP</td>
+<td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
+<td class="gt_row gt_right" headers="attributes">,,1,2400</td>
+<td class="gt_row gt_right" headers="value">0.00</td>
 <td class="gt_row gt_right" headers="zipcode">13202</td>
 </tr>
 </tbody>
@@ -940,6 +940,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>With a bit more fishing, we find a second webpage, <a href="https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc%3AC00861/html#">Global Historical Climatology Network - Daily (GHCN - Daily), Version 3</a>. On this page, we spot a <a href="https://www.ncei.noaa.gov/data/global-historical-climatology-network-daily/doc/readme.txt">GHCNd README File</a>, open it, and scroll down. Again we see “N = failed naught check” under QFLAG1, “the quality flag for the first day of the month.”</li>
 </ul>
 <p>🐡 Fish 3: ask the experts! 🙋‍♀️</p>
+<ul>
+<li>If after searching on their website, we’re still unsure about the meaning of “failed naught check,” we can ask NOAA directly. Many public data sources provide an email address or contact form for confused data users. It may take a few days, but someone from the agency typically responds. Direct contact assists the public with better understanding, using, and analyzing their data.</li>
+</ul>
 <p>☂️</p>
 <p>SELF NOTES: * RE: Grand Rapids, this is from two weather stations, and the metadata are telling you it failed checks (“N”). * Have to look up via the <a href="https://www.ncei.noaa.gov/cdo-web/search?datasetid=GHCND">Climate Data Online Search</a> to make sure you’re using current stations with good coverage. Like here: https://www.ncei.noaa.gov/cdo-web/datasets/GHCND/locations/CITY:US260009/detail#stationlist. Only three weather stateions are at 100% and are through current day.</p>
 <p>Let’s align this with what we see in NOAA’s <a href="https://www.ncei.noaa.gov/pub/data/cdo/documentation/GHCND_documentation.pdf">GHCN Documentation</a>, which you can find reviewing their Climate Data Online <a href="https://www.ncei.noaa.gov/cdo-web/datasets">Dataset Discovery page</a>.</p>
@@ -973,21 +976,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span>    <span class="fu">group_by</span><span class="op">(</span><span class="va">zipcode</span>, <span class="va">date</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu">summarise</span><span class="op">(</span>obs_count <span class="op">=</span> <span class="fu">n</span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>    <span class="fu"><a href="https://rdrr.io/r/stats/filter.html">filter</a></span><span class="op">(</span><span class="va">obs_count</span> <span class="op">!=</span> <span class="fl">1</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 70 × 3</span></span>
+<span><span class="co">#&gt; # A tibble: 67 × 3</span></span>
 <span><span class="co">#&gt; # Groups:   zipcode [1]</span></span>
 <span><span class="co">#&gt;    zipcode date                obs_count</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;   &lt;chr&gt;                   &lt;int&gt;</span></span>
-<span><span class="co">#&gt;  1 49504   2026-06-01T00:00:00         2</span></span>
-<span><span class="co">#&gt;  2 49504   2026-06-02T00:00:00         2</span></span>
-<span><span class="co">#&gt;  3 49504   2026-06-04T00:00:00         2</span></span>
-<span><span class="co">#&gt;  4 49504   2026-06-05T00:00:00         2</span></span>
-<span><span class="co">#&gt;  5 49504   2026-06-06T00:00:00         2</span></span>
-<span><span class="co">#&gt;  6 49504   2026-06-09T00:00:00         2</span></span>
-<span><span class="co">#&gt;  7 49504   2026-06-10T00:00:00         2</span></span>
-<span><span class="co">#&gt;  8 49504   2026-06-11T00:00:00         2</span></span>
-<span><span class="co">#&gt;  9 49504   2026-06-12T00:00:00         2</span></span>
-<span><span class="co">#&gt; 10 49504   2026-06-13T00:00:00         2</span></span>
-<span><span class="co">#&gt; # ℹ 60 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span><span class="co">#&gt;  1 49504   2026-07-28T00:00:00         2</span></span>
+<span><span class="co">#&gt;  2 49504   2026-07-29T00:00:00         2</span></span>
+<span><span class="co">#&gt;  3 49504   2026-07-30T00:00:00         2</span></span>
+<span><span class="co">#&gt;  4 49504   2026-08-01T00:00:00         2</span></span>
+<span><span class="co">#&gt;  5 49504   2026-08-02T00:00:00         2</span></span>
+<span><span class="co">#&gt;  6 49504   2026-08-03T00:00:00         2</span></span>
+<span><span class="co">#&gt;  7 49504   2026-08-04T00:00:00         2</span></span>
+<span><span class="co">#&gt;  8 49504   2026-08-06T00:00:00         2</span></span>
+<span><span class="co">#&gt;  9 49504   2026-08-07T00:00:00         2</span></span>
+<span><span class="co">#&gt; 10 49504   2026-08-08T00:00:00         2</span></span>
+<span><span class="co">#&gt; # ℹ 57 more rows</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span></span>
@@ -1008,23 +1011,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="downlit sourceCode r code-with-copy"><code class="sourceCode R"><span><span class="co"># print rain table</span></span>
 <span><span class="fu">gt</span><span class="fu">::</span><span class="fu"><a href="https://gt.rstudio.com/reference/gt.html">gt</a></span><span class="op">(</span><span class="va">max_rain</span><span class="op">)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
-<div id="vgderywaoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#vgderywaoz table {
+<div id="pcqhliingo" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#pcqhliingo table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#vgderywaoz thead, #vgderywaoz tbody, #vgderywaoz tfoot, #vgderywaoz tr, #vgderywaoz td, #vgderywaoz th {
+#pcqhliingo thead, #pcqhliingo tbody, #pcqhliingo tfoot, #pcqhliingo tr, #pcqhliingo td, #pcqhliingo th {
   border-style: none;
 }
 
-#vgderywaoz p {
+#pcqhliingo p {
   margin: 0;
   padding: 0;
 }
 
-#vgderywaoz .gt_table {
+#pcqhliingo .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1050,12 +1053,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_caption {
+#pcqhliingo .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#vgderywaoz .gt_title {
+#pcqhliingo .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1067,7 +1070,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#vgderywaoz .gt_subtitle {
+#pcqhliingo .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1079,7 +1082,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#vgderywaoz .gt_heading {
+#pcqhliingo .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1091,13 +1094,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_bottom_border {
+#pcqhliingo .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_col_headings {
+#pcqhliingo .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1112,7 +1115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_col_heading {
+#pcqhliingo .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1132,7 +1135,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vgderywaoz .gt_column_spanner_outer {
+#pcqhliingo .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1144,15 +1147,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#vgderywaoz .gt_column_spanner_outer:first-child {
+#pcqhliingo .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#vgderywaoz .gt_column_spanner_outer:last-child {
+#pcqhliingo .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#vgderywaoz .gt_column_spanner {
+#pcqhliingo .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1164,11 +1167,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#vgderywaoz .gt_spanner_row {
+#pcqhliingo .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#vgderywaoz .gt_group_heading {
+#pcqhliingo .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1194,7 +1197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#vgderywaoz .gt_empty_group_heading {
+#pcqhliingo .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1209,15 +1212,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#vgderywaoz .gt_from_md > :first-child {
+#pcqhliingo .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#vgderywaoz .gt_from_md > :last-child {
+#pcqhliingo .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#vgderywaoz .gt_row {
+#pcqhliingo .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1236,7 +1239,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#vgderywaoz .gt_stub {
+#pcqhliingo .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1249,7 +1252,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vgderywaoz .gt_stub_row_group {
+#pcqhliingo .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1263,15 +1266,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#vgderywaoz .gt_row_group_first td {
+#pcqhliingo .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#vgderywaoz .gt_row_group_first th {
+#pcqhliingo .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#vgderywaoz .gt_summary_row {
+#pcqhliingo .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1281,16 +1284,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vgderywaoz .gt_first_summary_row {
+#pcqhliingo .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_first_summary_row.thick {
+#pcqhliingo .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#vgderywaoz .gt_last_summary_row {
+#pcqhliingo .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1300,7 +1303,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_grand_summary_row {
+#pcqhliingo .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1310,7 +1313,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vgderywaoz .gt_first_grand_summary_row {
+#pcqhliingo .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1320,7 +1323,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_last_grand_summary_row_top {
+#pcqhliingo .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1330,11 +1333,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_striped {
+#pcqhliingo .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#vgderywaoz .gt_table_body {
+#pcqhliingo .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1343,7 +1346,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_footnotes {
+#pcqhliingo .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1357,7 +1360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_footnote {
+#pcqhliingo .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1366,7 +1369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vgderywaoz .gt_sourcenotes {
+#pcqhliingo .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1380,7 +1383,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#vgderywaoz .gt_sourcenote {
+#pcqhliingo .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1388,72 +1391,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#vgderywaoz .gt_left {
+#pcqhliingo .gt_left {
   text-align: left;
 }
 
-#vgderywaoz .gt_center {
+#pcqhliingo .gt_center {
   text-align: center;
 }
 
-#vgderywaoz .gt_right {
+#pcqhliingo .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#vgderywaoz .gt_font_normal {
+#pcqhliingo .gt_font_normal {
   font-weight: normal;
 }
 
-#vgderywaoz .gt_font_bold {
+#pcqhliingo .gt_font_bold {
   font-weight: bold;
 }
 
-#vgderywaoz .gt_font_italic {
+#pcqhliingo .gt_font_italic {
   font-style: italic;
 }
 
-#vgderywaoz .gt_super {
+#pcqhliingo .gt_super {
   font-size: 65%;
 }
 
-#vgderywaoz .gt_footnote_marks {
+#pcqhliingo .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#vgderywaoz .gt_asterisk {
+#pcqhliingo .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#vgderywaoz .gt_indent_1 {
+#pcqhliingo .gt_indent_1 {
   text-indent: 5px;
 }
 
-#vgderywaoz .gt_indent_2 {
+#pcqhliingo .gt_indent_2 {
   text-indent: 10px;
 }
 
-#vgderywaoz .gt_indent_3 {
+#pcqhliingo .gt_indent_3 {
   text-indent: 15px;
 }
 
-#vgderywaoz .gt_indent_4 {
+#pcqhliingo .gt_indent_4 {
   text-indent: 20px;
 }
 
-#vgderywaoz .gt_indent_5 {
+#pcqhliingo .gt_indent_5 {
   text-indent: 25px;
 }
 
-#vgderywaoz .katex-display {
+#pcqhliingo .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#vgderywaoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#pcqhliingo div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1469,22 +1472,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr></thead>
 <tbody class="gt_table_body">
 <tr class="odd">
-<td class="gt_row gt_left" headers="date">2026-06-10T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-09-02T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USW00014771</td>
 <td class="gt_row gt_left" headers="attributes">,,1,2400</td>
-<td class="gt_row gt_right" headers="value">1.74</td>
+<td class="gt_row gt_right" headers="value">1.00</td>
 <td class="gt_row gt_right" headers="zipcode">13202</td>
-<td class="gt_row gt_right" headers="date_format">2026-06-10</td>
+<td class="gt_row gt_right" headers="date_format">2026-09-02</td>
 </tr>
 <tr class="even">
-<td class="gt_row gt_left" headers="date">2026-06-27T00:00:00</td>
+<td class="gt_row gt_left" headers="date">2026-09-06T00:00:00</td>
 <td class="gt_row gt_left" headers="datatype">PRCP</td>
 <td class="gt_row gt_left" headers="station">GHCND:USC00356749</td>
-<td class="gt_row gt_left" headers="attributes">,,7,2200</td>
-<td class="gt_row gt_right" headers="value">0.45</td>
+<td class="gt_row gt_left" headers="attributes">,,H,2200</td>
+<td class="gt_row gt_right" headers="value">0.30</td>
 <td class="gt_row gt_right" headers="zipcode">97205</td>
-<td class="gt_row gt_right" headers="date_format">2026-06-27</td>
+<td class="gt_row gt_right" headers="date_format">2026-09-06</td>
 </tr>
 <tr class="odd">
 <td class="gt_row gt_left" headers="date">2026-08-19T00:00:00</td>

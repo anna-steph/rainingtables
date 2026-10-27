@@ -123,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_apis-water-main.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -254,8 +254,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </nav><div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active"><h2 id="toc-title">On this page</h2>
+   
+  <ul>
+<li><a href="#yaml-headers" id="toc-yaml-headers" class="nav-link active" data-scroll-target="#yaml-headers">YAML headers</a></li>
+  <li><a href="#additional-references" id="toc-additional-references" class="nav-link" data-scroll-target="#additional-references">Additional references</a></li>
+  </ul></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01_static-output-drip.html">Flow</a></li><li class="breadcrumb-item"><a href="./03_params-pipe-specs.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Params: Pipe Specs {{&lt; fa droplet &gt;}}</span></a></li></ol></nav><div class="quarto-title">
@@ -273,10 +278,49 @@ ul.task-list li input[type="checkbox"] {
   
 
 
-</header>
+</header><p>Hey analyst! Welcome to <strong>Chapter 3 of 🌧️ Raining Tables</strong> 🌧️</p>
+<p>Today, we’re talking about parameterized reports, reports with dials and settings we can change, turning our report into a template. (dial)</p>
+<p>In Chapter 2, we hooked up to NOAA’s API to call data directly and update our report. Now, we’d like to run our report on three different zipcodes. But we <em>don’t</em> want three nearly-identical versions of the same report, which becomes a burden to maintain over time. Can we change our report’s API call arguments without creating copies of the report?</p>
+<p>Yes! With parameters, our report becomes a template, like a function that takes parameters as arguments, or a mad lib story with blanks that are filled in when the report is run. We choose which items should be <del>blank</del> changed for each report run, then include those items as parameters in our report headers.</p>
+<p>If we set our API call arguments as report parameters, we can easily run the same report three ways. 🚰 🚰 🚰</p>
+<p>✨ ~ <em>pretty amazing</em> ~ ✨</p>
+<p>So how do report parameters work?</p>
+<section id="yaml-headers" class="level3"><h3 class="anchored" data-anchor-id="yaml-headers">YAML headers</h3>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>What’s YAML?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>YAML stands for “Yet Another Markdown Language.” As syntax, it’s often used to establish base configuration, settings, or parameters, which is why we’re seeing it pop up in parameterized reports.</p>
+</div>
+</div>
+</section><section id="additional-references" class="level2"><h2 class="anchored" data-anchor-id="additional-references">Additional references</h2>
+<p>Further reading &amp; viewing on parameterized reports:</p>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 27%">
+<col style="width: 51%">
+</colgroup>
+<thead><tr class="header">
+<th>Author</th>
+<th>Resource</th>
+<th>Description</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td>Jadey Ryan</td>
+<td>“Parameterized Reports with Quarto”</td>
+<td>Jadey Ryan’s excellent resource based on her Cascadia R Conf and RLadies PDX talks. I continue to share this video to help folks learn how to create parameterized reports.</td>
+</tr></tbody>
+</table>
 
 
-</main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
+</section></main><!-- /main --><script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
     const anchorJS = new window.AnchorJS();
@@ -681,8 +725,8 @@ ul.task-list li input[type="checkbox"] {
     }
   });
   </script><nav class="page-navigation"><div class="nav-page nav-page-previous">
-      <a href="./02_apis-water-main.html" class="pagination-link" aria-label="Public APIs: Our Water Main">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public APIs: Our Water Main</span></span>
+      <a href="./02_apis-water-main.html" class="pagination-link" aria-label="Public Data APIs: Our Water Main">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Public Data APIs: Our Water Main</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
