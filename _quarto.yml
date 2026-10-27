@@ -2,7 +2,7 @@ project:
   type: book
   output-dir: _book
   resources:
-   - "R/*.R"
+   - "/R/*.R"   # leading / anchors to the project root; without it the glob also matches working/**/R/*.R
 
   # Pin working directory to the project root. Quarto's default is "file",
   # which is identical today (every chapter is at the root) but breaks
