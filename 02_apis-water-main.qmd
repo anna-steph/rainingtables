@@ -1,20 +1,17 @@
-# Public APIs: Our Water Main {#sec-noaa-api} 
+# Public Data APIs: Our Water Main {#sec-noaa-api} 
 
 ```{r}
 #| label: setup
 #| include: false
 
-
 source("R/_common.R")
 ```
 
-Hey analyst! Welcome to **Chapter 2 of 🌧️ Raining Tables** 🌧️ 
+Hey analyst! Welcome to **🌧️ Raining Tables Chapter 2** 🌧️ 
 
-Hold onto your hats! 🪁 Today, we're talking about APIs. ⛲
+Hold onto your hats! 🪁 Today, we're hooking up to our NOAA API water main. No more hauling csvs around; we'll have our data on tap. 🚰 
 
-Today we're hooking up to our NOAA API water main. No more hauling csvs around; we'll have our data on tap. 🚰 
-
-Said differently: instead of re-downloading a csv every update, running our scripts will call NOAA's API directly and pull their data into our programming environment.
+Said differently: instead of manually re-downloading a csv every update, our scripts will call NOAA's API directly and pull their data into our programming environment.
 
 ✨ ~ *pretty amazing* ~ ✨
 
@@ -23,40 +20,38 @@ So how do APIs work?
 :::{.callout-note}
 ## What's an API?
 
-An API, or Application Programming Interface, is a programmatic way to interact with a webservice. 
+An API, or [Application Programming Interface](https://en.wikipedia.org/wiki/API), is an application programming interface to connect computers or pieces of software. In contrast to a user interface, APIs run "under the hood" and aren't intended to be used directly by people other than the programmer incorporating it into software.[^1] As programmers, if we're using an API, we're "calling" the API, in our case to request data directly from NOAA's CDO database, and NOAA is the institution "hosting" the API. 
 
-For our purposes, automating a public data pull, the NOAA API gives us a way to request data using a script, rather than us manually clicking through their website's user interface. Our API call returns the data we need in an efficient, standardized, and predictable way. 🚰
+For our purposes, updating an analysis automatically, the NOAA API gives us a way to request data using a script rather than having to manually click through their website's user interface. They've written out [API documentation](https://www.ncdc.noaa.gov/cdo-web/webservices/v2) so we can format our call to retrieve the data we need. Our API call returns this data in an efficient, standardized, and predictable way. 🚰
 
 :::
 
-First, we need to request an `API key`🔑 , a user password we add to our API call so NOAA recognizes us, like our ID:  
+First, we need to request an `API key`🔑 , a user password we add to our API call so NOAA recognizes us:  
 
-* Go to NOAA's [API page](https://www.ncdc.noaa.gov/cdo-web/token) to request a key.  
-* Submit the email address you want associated with this project.  
-* They'll send you an email with your `API key` 🔑, a long string of letters and numbers. Copy this string.  
-* Save this string in .Renviron, your environment file ([see here for an example](https://www.youtube.com/watch?v=D2yPyEPMTbo)), so your script knows where to look for it. Don't copy-paste it directly in your code! If you copy-paste into your code, you could expose it when sharing code or posting on GitHub. Saving in .Renviron keeps your password a secret. 🤫
+1. Go to NOAA's [API page](https://www.ncdc.noaa.gov/cdo-web/token) to request a key.  
+2. Submit the email address you want associated with this project.  
+3. They'll send you an email with your `API key` 🔑, a long string of letters and numbers. Copy this string.  
+4. Save this string in .Renviron, your [R environment file](https://docs.posit.co/ide/user/ide/guide/environments/r/managing-r.html#renviron) ([example here](https://www.youtube.com/watch?v=D2yPyEPMTbo)), so your script knows where to look for it. Don't copy-paste it directly in your code! If you copy-paste into your code, you could expose it when sharing code or posting on GitHub. Saving in .Renviron keeps your password a secret. 🤫
 
-Format your .Renviron file as:  
+Format API keys in your .Renviron file as:  
 
-`NOAA_CDO_KEY=abcde12345`
+> `NOAA_CDO_KEY=abcde12345`
 
-where `NOAA_CDO_KEY` is an example name you make up for your key and `abcde12345` is the `API key` 🔑 you received from NOAA.
-
-No spaces, no quotes.
+where `NOAA_CDO_KEY` is a memorable name you make up for your key and `abcde12345` is the `API key` 🔑 you received from NOAA. No spaces, no quotes.
 
 Have your API key safely saved in .Renviron? Excellent, let's start! 🥳
 
 ## API Calls
 
-Most API calls are a URL that combine your unique `API key` 🔑 with a collection of other strings, data parameters that identify our specific data cut. These parameters might specify a particular date range, series ID, time frequency, unit of measurement, data flags, or other attributes. 
+Many public data API calls are formatted as a URL that combines your unique `API key` 🔑 with a collection of other parameters to identify and request our specific data cut. A public data API URL typically first specifies a particular database or dataset maintained by the institution. It might also specify a date range, series ID, time frequency, unit of measurement, data flags, or other attributes you can use to  your data cut.
 
-Knowing how to format the call requires reading the data source materials and reviewing their examples. The format's quite fiddly! If we don't string the parameters together in the exact order, the API call won't go through. 
+Knowing how to format the call requires reading your data source's API user manual and reviewing provided examples. The format's quite fiddly! If we don't string the parameters together in the exact order, the API call won't go through. 
 
 Let's walk through the NOAA call from [`R/pull_daily_rain`](R/pull_daily_rain.R). Remember we're hooking up to our data source water main ⛲: we'll explore the different pipes, then connect the pipes together and test our taps. 🚰 
 
 ### Our API key
 
-For calling data in a report, we first save our key as an object (`api_key`) and use nchar() to check it exists without printing it and exposing it:
+For calling data in an analysis, we first save our key as the object `api_key` and use nchar() to check it exists without printing it and exposing it:
 
 ```{r}
 #| label: api-key
@@ -66,11 +61,11 @@ api_key <- Sys.getenv("NOAA_CDO_KEY")
 nchar(api_key) # returns 32 if it's set, 0 if it isn't
 ```
 
-### What we're asking for
+### What we're requesting
 
-We may want many cuts of data, so [`R/pull_daily_rain`](R/pull_daily_rain.R) API call should be relatively flexibly and easy to change. For this we set our data parameters as function arguments. Change our arguments lets us retrieve different cuts of data. 
+We may want many cuts of data, so [`R/pull_daily_rain`](R/pull_daily_rain.R) API call should be flexible enough to easily change the data parameters we care about. For this, we set our data parameters as function arguments. We can then retrieve different cuts of data by changing the arguments. 
 
-To show this concretely, let's set the parameters for a data cut for [zipcode 97205](https://www.google.com/maps/place/Portland,+OR+97205/@45.5173805,-122.740049,13z/data=!3m1!4b1!4m6!3m5!1s0x54950a1cf1ebc7d1:0xd47124b9bd5b8f22!8m2!3d45.5205043!4d-122.707349!16s%2Fm%2F020r733?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D), the beautiful but rainy Portland, Oregon. 🌧️  
+To show this concretely, let's set the parameters for a data cut for [zipcode 97205](https://www.google.com/maps/place/Portland,+OR+97205/@45.5173805,-122.740049,13z/data=!3m1!4b1!4m6!3m5!1s0x54950a1cf1ebc7d1:0xd47124b9bd5b8f22!8m2!3d45.5205043!4d-122.707349!16s%2Fm%2F020r733?entry=ttu&g_ep=EgoyMDI2MDkyMy4wIKXMDSoASAFQAw%3D%3D), the beautiful but rainy city of Portland, Oregon. 🌧️  
 
 ```{r}
 #| label: walkthrough-params
@@ -81,7 +76,6 @@ units <- "standard"
 limit <- 1000
 
 location_params <- paste0("&locationid=ZIP:", zipcode) # specifies we're using zipcodes for location
-location_params
 ```
 
 Side note: if you look in [`R/pull_daily_rain`](R/pull_daily_rain.R), you'll see it's our choice to use zip codes to specify location in `location_params`. NOAA also gives us the option to specify location using weather station IDs, IDs for the specific sites weather data are collected. Finding weather station IDs takes a bit more digging, though, so we're using zip codes.  
@@ -96,35 +90,30 @@ Next, we string our URL strings together, like fitting pipes. 🔧
 # stringing our data cut parameters to NOAA's URL string:
 
 url_string <- paste0(
-  "https://www.ncei.noaa.gov/cdo-web/api/v2/data?",
-  "datasetid=GHCND",
-  "&datatypeid=PRCP",
-  location_params,
-  "&startdate=", date_start,
-  "&enddate=", date_end,
-  "&units=", units,
-  "&limit=", limit
+  "https://www.ncei.noaa.gov/cdo-web/api/v2/data?", # base url string
+  "datasetid=GHCND", # the dataset we want
+  "&datatypeid=PRCP", # the data type we want (precipitation)
+  location_params, # our location params
+  "&startdate=", date_start, # start date
+  "&enddate=", date_end, # end date
+  "&units=", units, # units of measurement
+  "&limit=", limit # how many data observations included in the API's response
 )
-
 # just keep stringing 🐟
-
-url_string
 ```
 
 #### URL formats
 
-Note: the NOAA API's standard URL string typically won't change *unless* NOAA intentionally updates its backend infrastructure. If we're building a product using NOAA's API, we should subscribe to NOAA updates or notifications so they can communicate any changes to us.
+The NOAA API's base URL string typically won't change *unless* NOAA intentionally updates its backend infrastructure. If we're building a product using NOAA's API, we should subscribe to NOAA updates or notifications so they can communicate those kinds of changes to us. Reliable public data flows and user communications are hallmarks of working #publicdatainfrastructure. 
 
-Reliable public data flows and user communications are hallmarks of working #publicdatainfrastructure. ⛲ 🌉 ⛲ 🚃 ⛲ 🌆 
-
-We've added all the parameters we need for our data cut! Last step: including your `API key`. 🔑
+We've added all the parameters we need for our data cut! Last step: including your `API key` 🔑.
 
 :::{.callout-important}
-## Where the key goes
+## Where the API key goes
 
-In the case of the NOAA API, we're not adding our `API key` 🔑 directly into our call URL. NOAA wants it in a request *header*, which is a bit different (see code below).
+In the case of the NOAA API, we're not adding our `API key` 🔑 directly into our call URL, as Census and some other public data sources do. NOAA wants it in a request *header*, which is a bit different (see code below).
 
-Many other APIs expect `&api_key=...` directly added to `url_string`. If that's the case, the full URL itself is a secret: don't print it, don't log it, don't paste it anywhere. 🤫 For other APIs, review their user manual and check their API call format.
+If a different public data API expects `&api_key=...` directly added to `url_string`, remember the full URL string then contains your `API key` 🔑 and becomes a secret: don't print it, don't log it, don't paste it anywhere. 🤫 For other APIs, review their documentation and check their API call examples.
 :::
 
 ### Calling our data
@@ -232,7 +221,7 @@ It's pretty common for API calls to fail on the first try, especially if you're 
 
 If at first you don't succeed, try, try again! 😆 
 
-More importantly, how do we *know* if our call fails? Unless our program flags the fail, it'll continue running, try to parse the error message, and error out. To prevent this from happening, we need to add checks:
+More importantly, how do we *know* if our call fails? Unless our program flags the fail, it'll continue running, try to parse the error message, and halt and force us to debug. To prevent this from happening, we need to add checks:
 
 ```{r}
 #| label: walkthrough-bad-key
@@ -245,20 +234,7 @@ httr::status_code(bad)
 httr::stop_for_status(bad, task = "pull data from NOAA CDO API")
 ```
 
-Despite the bad call, `GET()` doesn't throw any errors. 🧐 Counterintuitively, `GET()` has no reason to flag failed calls unless we tell it to. 
-`stop_for_status()` is our flag. Without it, our script sails on 🌊 ⛵ 🏔️, tries to parse an error message as data 💥 🏔️, and stalls out. If we don't add this kind of check, we'll be wondering why our run failed and have to debug. 
-
-### The whole function
-
-Everything above, with the printing taken out and the edge cases put in:
-
-```{r}
-#| label: full-function
-#| file: R/pull_daily_rain.R
-#| eval: false
-#| filename: "R/pull_daily_rain.R"
-#| code-fold: show
-```
+`stop_for_status()` flags any failed calls. Without it, our script sails on 🌊 ⛵ 🏔️, tries to parse an error message as data 💥 🏔️, and stalls out. 
 
 ## Additional references
 
@@ -269,4 +245,4 @@ Further reading & viewing on working with APIs and JSON:
 | Ted Laderas | ["A gRadual intRoduction to Web APIs and JSON](https://www.youtube.com/watch?v=nDyiIx0BVq0&t=610s) | Amazing educator Ted Laderas walks through the components of web APIs. |
 | Data Science Discovery | [#2: NWS Hourly Weather Forecast](https://discovery.cs.illinois.edu/projects/nws-hourly-weather-forecast/), also on YouTube at [Microprojects with Michelle](https://www.youtube.com/watch?v=m_-ZvByh098) | Part of University of Illinois Urbana-Champaign Professors Karle Flanagan and Wade Fagen-Ulmschneider's fantastic website, [Learn Data Science](https://discovery.cs.illinois.edu/learn/). Python-based, but the same data engineering concepts apply. |
 
-
+[^1]: Wikipedia, "API," https://en.wikipedia.org/wiki/API.
