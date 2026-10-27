@@ -1,9 +1,11 @@
 {
-  "hash": "b83260f19f1cd7379c9a8112c820f4a2",
+  "hash": "ae97d7f5b6f321d0f23074690c4e9292",
   "result": {
     "engine": "knitr",
-    "markdown": "# Params: Pipe Specs {{< fa droplet >}} {#sec-params} \n\n",
-    "supporting": [],
+    "markdown": "# Params: Pipe Specs {{< fa droplet >}} {#sec-params} \n\n\n\nHey analyst! Welcome to **Chapter 3 of 🌧️ Raining Tables** 🌧️ \n\nToday, we're talking about parameterized reports, reports with dials and settings we can change, turning our report into a template. (dial)\n\nIn Chapter 2, we hooked up to NOAA's API to call data directly and update our report. Now, we'd like to run our report on three different zipcodes. But we *don't* want three nearly-identical versions of the same report, which becomes a burden to maintain over time. Can we change our report's API call arguments without creating copies of the report? \n\nYes! With parameters, our report becomes a template, like a function that takes parameters as arguments, or a mad lib story with blanks that are filled in when the report is run. We choose which items should be ~~blank~~ changed for each report run, then include those items as parameters in our report headers. \n\nIf we set our API call arguments as report parameters, we can easily run the same report three ways. 🚰 🚰 🚰 \n\n✨ ~ *pretty amazing* ~ ✨\n\nSo how do report parameters work?\n\n### YAML headers\n\n:::{.callout-important}\n## What's YAML?\n\nYAML stands for \"Yet Another Markdown Language.\" As syntax, it's often used to establish base configuration, settings, or parameters, which is why we're seeing it pop up in parameterized reports. \n:::\n\n## Additional references\n\nFurther reading & viewing on parameterized reports:\n\n| Author | Resource |   Description   |\n| ------ | -------- | --------------- |\n| Jadey Ryan | \"Parameterized Reports with Quarto\" | Jadey Ryan's excellent resource based on her Cascadia R Conf and RLadies PDX talks. I continue to share this video to help folks learn how to create parameterized reports. |",
+    "supporting": [
+      "03_params-pipe-specs_files"
+    ],
     "filters": [
       "rmarkdown/pagebreak.lua"
     ],
